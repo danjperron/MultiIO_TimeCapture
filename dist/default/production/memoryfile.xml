@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\PIC_Time_detection_IO.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>4096</length>
+      <used>2861</used>
+      <free>1235</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>384</length>
+      <used>301</used>
+      <free>83</free>
+    </memory>
+  </executable>
+</project>
