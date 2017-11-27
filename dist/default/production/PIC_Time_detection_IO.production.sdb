@@ -27,85 +27,89 @@
 [v _DoIOCycle DoIOCycle `(v  1 e 1 0 ]
 "123
 [v _ResetIOCycle ResetIOCycle `(v  1 e 1 0 ]
-"159
+"137
 [v _ReadIOPin ReadIOPin `(uc  1 e 1 0 ]
-"172
+"150
 [v _WriteIO WriteIO `(v  1 e 1 0 ]
-"215
+"193
 [v _SetIOChange SetIOChange `(v  1 e 1 0 ]
-"345 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"348 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SaveSetting SaveSetting `(v  1 e 1 0 ]
-"361
+"364
 [v _SetAnalogConfig SetAnalogConfig `(v  1 e 1 0 ]
-"393
+"396
 [v _SetOutputConfig SetOutputConfig `(v  1 e 1 0 ]
-"463
+"466
 [v _SetPullUp SetPullUp `(v  1 e 1 0 ]
-"476
+"479
 [v _SetInputConfig SetInputConfig `(v  1 e 1 0 ]
-"494
+"497
 [v _SetIOConfig SetIOConfig `(v  1 e 1 0 ]
-"616
+"619
 [v _ReadA2D ReadA2D `(us  1 e 2 0 ]
-"638
+"641
 [v _isr isr `II(v  1 s 1 isr ]
-"835
+"843
 [v _putch putch `(v  1 e 1 0 ]
-"857
+"865
 [v _RcvClear RcvClear `(v  1 e 1 0 ]
-"864
+"872
 [v _RcvIsDataIn RcvIsDataIn `(uc  1 e 1 0 ]
-"869
+"877
 [v _RcvGetChar RcvGetChar `(uc  1 e 1 0 ]
-"886
+"894
 [v _SendModbusPacket SendModbusPacket `(v  1 e 1 0 ]
-"907
+"915
 [v _InitModbusPacket InitModbusPacket `(v  1 e 1 0 ]
-"914
+"922
 [v _SendFrameError SendFrameError `(v  1 e 1 0 ]
-"935
+"943
 [v _SendReadByteFrame SendReadByteFrame `(v  1 e 1 0 ]
-"971
+"981
 [v _SendReadFrame SendReadFrame `(v  1 e 1 0 ]
-"1003
+"1010
+[v _SendReadRegistersFrame SendReadRegistersFrame `(v  1 e 1 0 ]
+"1030
 [v _SendBytesFrame SendBytesFrame `(v  1 e 1 0 ]
-"1093
+"1120
 [v _SendPresetFrame SendPresetFrame `(v  1 e 1 0 ]
-"1133
+"1160
 [v _DecodeSerial DecodeSerial `(uc  1 e 1 0 ]
-"1236
+"1263
 [v _ReadHoldingRegister ReadHoldingRegister `(v  1 e 1 0 ]
-"1275
+"1304
 [v _ReadIO ReadIO `(us  1 e 2 0 ]
-"1300
+"1329
 [v _ReadVRef ReadVRef `(us  1 e 2 0 ]
-"1309
+"1338
 [v _ReadTSensor ReadTSensor `(us  1 e 2 0 ]
-"1319
+"1348
 [v _MultipleRegister MultipleRegister `(uc  1 e 1 0 ]
-"1327
+"1356
 [v _GetInputPin GetInputPin `(uc  1 e 1 0 ]
-"1339
+"1368
 [v _ReadAllCoils ReadAllCoils `(us  1 e 2 0 ]
-"1358
+"1387
 [v _ReadCurrentRegister ReadCurrentRegister `(v  1 e 1 0 ]
-"1417
+"1446
 [v _ReadInputStatus ReadInputStatus `(v  1 e 1 0 ]
-"1464
+"1493
 [v _SetSingleCoil SetSingleCoil `(v  1 e 1 0 ]
-"1472
+"1501
 [v _WriteAllCoils WriteAllCoils `(v  1 e 1 0 ]
-"1486
+"1515
 [v _ForceSingleCoil ForceSingleCoil `(v  1 e 1 0 ]
-"1509
+"1538
 [v _PresetSingleRegister PresetSingleRegister `(v  1 e 1 0 ]
-"1597
+"1648
 [v _ExecuteCommand ExecuteCommand `(v  1 e 1 0 ]
-"1629
+"1680
 [v _main main `(i  1 e 2 0 ]
-"27 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
+"31 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
+[v _SetTimer1Clock SetTimer1Clock `(v  1 e 1 0 ]
+"53
 [v _InitTimeCapture InitTimeCapture `(v  1 e 1 0 ]
-"52
+"79
 [v _SetTimeCaptureConfig SetTimeCaptureConfig `(v  1 e 1 0 ]
 "349 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic16f1827.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
@@ -121,6 +125,22 @@
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
 "797
 [v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S603 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+"819
+[s S612 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[u S616 . 1 `S603 1 . 1 0 `S612 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES616  1 e 1 @24 ]
 "939
 [v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
 "959
@@ -141,7 +161,7 @@
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "1885
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S231 . 1 `uc 1 ADON 1 0 :1:0 
+[s S226 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -150,18 +170,18 @@
 `uc 1 CHS4 1 0 :1:6 
 ]
 "1910
-[s S239 . 1 `uc 1 . 1 0 :1:0 
+[s S234 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S243 . 1 `uc 1 . 1 0 :1:0 
+[s S238 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S246 . 1 `S231 1 . 1 0 `S239 1 . 1 0 `S243 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES246  1 e 1 @157 ]
+[u S241 . 1 `S226 1 . 1 0 `S234 1 . 1 0 `S238 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES241  1 e 1 @157 ]
 "1965
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
-[s S147 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S142 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 ADNREF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -171,15 +191,15 @@
 `uc 1 ADFM 1 0 :1:7 
 ]
 "1987
-[s S156 . 1 `uc 1 ADPREF 1 0 :2:0 
+[s S151 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS 1 0 :3:4 
 ]
-[u S160 . 1 `S147 1 . 1 0 `S156 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES160  1 e 1 @158 ]
+[u S155 . 1 `S142 1 . 1 0 `S151 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES155  1 e 1 @158 ]
 "2455
 [v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
-[s S119 . 1 `uc 1 ADFVR0 1 0 :1:0 
+[s S114 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
@@ -189,11 +209,11 @@
 `uc 1 FVREN 1 0 :1:7 
 ]
 "2476
-[s S128 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S123 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 ]
-[u S131 . 1 `S119 1 . 1 0 `S128 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES131  1 e 1 @279 ]
+[u S126 . 1 `S114 1 . 1 0 `S123 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES126  1 e 1 @279 ]
 "2777
 [v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
 "2839
@@ -390,7 +410,7 @@
 [v _Retry Retry `Nuc  1 e 1 0 ]
 "25 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.h
 [v _DHTFlag DHTFlag `VNEuc  1 e 1 @112 ]
-[s S191 . 1 `uc 1 NO_USED 1 0 :3:0 
+[s S186 . 1 `uc 1 NO_USED 1 0 :3:0 
 `uc 1 RB3 1 0 :1:3 
 `uc 1 RB1 1 0 :1:4 
 `uc 1 RB4 1 0 :1:5 
@@ -398,60 +418,60 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "42
-[u S198 . 1 `S191 1 . 1 0 `uc 1 Byte 1 0 ]
-[v _IOCounterFlag IOCounterFlag `VNES198  1 e 1 @113 ]
+[u S193 . 1 `S186 1 . 1 0 `uc 1 Byte 1 0 ]
+[v _IOCounterFlag IOCounterFlag `VNES193  1 e 1 @113 ]
 "43
-[v _IOCounterReset IOCounterReset `VNES198  1 e 1 @114 ]
-"260 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+[v _IOCounterReset IOCounterReset `VNES193  1 e 1 @114 ]
+"256 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _BadIO BadIO `uc  1 e 1 0 ]
-[s S37 . 11 `[10]uc 1 IOConfig 10 0 `uc 1 SlaveAddress 1 10 ]
-"261
-[v _Setting Setting `S37  1 e 11 0 ]
-"264
+[s S37 . 12 `[10]uc 1 IOConfig 10 0 `uc 1 SlaveAddress 1 10 `uc 1 Timer1Clock 1 11 ]
+"257
+[v _Setting Setting `S37  1 e 12 0 ]
+"260
 [v _Timerms Timerms `VNEus  1 e 2 0 ]
-"265
+"261
 [v _PrimaryTimerms PrimaryTimerms `VNEus  1 e 2 0 ]
-"266
+"262
 [v _TimerDeciSec TimerDeciSec `VNEuc  1 e 1 0 ]
-"279
+"282
 [v _InFiFo InFiFo `VNEuc  1 e 1 0 ]
 [v _OutFiFo OutFiFo `VNEuc  1 e 1 0 ]
-"280
+"283
 [v _RcvInFiFo RcvInFiFo `VNEuc  1 e 1 0 ]
 [v _RcvOutFiFo RcvOutFiFo `VNEuc  1 e 1 0 ]
-"281
-[v _SerialBuffer SerialBuffer `[32]uc  1 e 32 0 ]
-"282
-[v _RcvSerialBuffer RcvSerialBuffer `[32]uc  1 e 32 0 ]
 "284
-[v _SerialSum SerialSum `uc  1 e 1 0 ]
-"286
-[v _ModbusOnTransmit ModbusOnTransmit `b  1 e 0 0 ]
+[v _SerialBuffer SerialBuffer `[32]uc  1 e 32 0 ]
+"285
+[v _RcvSerialBuffer RcvSerialBuffer `[32]uc  1 e 32 0 ]
 "287
-[v _EnableConfigChange EnableConfigChange `b  1 e 0 0 ]
-"288
-[v _ForceReset ForceReset `b  1 e 0 0 ]
+[v _SerialSum SerialSum `uc  1 e 1 0 ]
 "289
-[v _ModbusPacketBuffer ModbusPacketBuffer `[32]uc  1 e 32 0 ]
+[v _ModbusOnTransmit ModbusOnTransmit `b  1 e 0 0 ]
+"290
+[v _EnableConfigChange EnableConfigChange `b  1 e 0 0 ]
+"291
+[v _ForceReset ForceReset `b  1 e 0 0 ]
 "292
-[v _IOMASK IOMASK `DC[11]uc  1 e 11 0 ]
+[v _ModbusPacketBuffer ModbusPacketBuffer `[32]uc  1 e 32 0 ]
 "295
+[v _IOMASK IOMASK `DC[11]uc  1 e 11 0 ]
+"298
 [v _NOT_IOMASK NOT_IOMASK `DC[11]uc  1 e 11 0 ]
-"299
+"302
 [v _CSMASK CSMASK `DC[10]uc  1 e 10 0 ]
-"309
-[v _ModbusFunction ModbusFunction `uc  1 e 1 0 ]
-"310
-[v _ModbusSlave ModbusSlave `uc  1 e 1 0 ]
-"311
-[v _ModbusAddress ModbusAddress `us  1 e 2 0 ]
 "312
-[v _ModbusData ModbusData `us  1 e 2 0 ]
+[v _ModbusFunction ModbusFunction `uc  1 e 1 0 ]
 "313
-[v _ModbusCRC ModbusCRC `VEus  1 e 2 0 ]
+[v _ModbusSlave ModbusSlave `uc  1 e 1 0 ]
 "314
-[v _ModbusFramePointer ModbusFramePointer `uc  1 e 1 0 ]
+[v _ModbusAddress ModbusAddress `us  1 e 2 0 ]
+"315
+[v _ModbusData ModbusData `us  1 e 2 0 ]
 "316
+[v _ModbusCRC ModbusCRC `VEus  1 e 2 0 ]
+"317
+[v _ModbusFramePointer ModbusFramePointer `uc  1 e 1 0 ]
+"319
 [v _ModbusBuffer ModbusBuffer `[10]uc  1 e 10 0 ]
 "13 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
 [v _WaitForStartDeciSecond WaitForStartDeciSecond `b  1 e 0 0 ]
@@ -461,30 +481,30 @@
 [v _GotCapSenseFlag GotCapSenseFlag `b  1 e 0 0 ]
 "17
 [v _TimeCapture TimeCapture `VE[4]ul  1 e 16 0 ]
-"19
+"21
 [v _TimerHiCount TimerHiCount `VEus  1 e 2 0 ]
-"20
-[v _TimerLoCount TimerLoCount `VEus  1 e 2 0 ]
-"22
-[v _TimeCapture1Count TimeCapture1Count `VEus  1 e 2 0 ]
-"23
-[v _TimeCapture2Count TimeCapture2Count `VEus  1 e 2 0 ]
 "24
-[v _TimeCapture3Count TimeCapture3Count `VEus  1 e 2 0 ]
+[v _TimeCapture1Count TimeCapture1Count `VEus  1 e 2 0 ]
 "25
+[v _TimeCapture2Count TimeCapture2Count `VEus  1 e 2 0 ]
+"26
+[v _TimeCapture3Count TimeCapture3Count `VEus  1 e 2 0 ]
+"27
 [v _TimeCapture4Count TimeCapture4Count `VEus  1 e 2 0 ]
-"1629 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"29
+[v _Timer1Clock Timer1Clock `uc  1 e 1 0 ]
+"1680 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"1630
-[v main@loop loop `uc  1 a 1 27 ]
-"1668
-[v main@idx idx `uc  1 a 1 26 ]
-"1631
-[v main@rcode rcode `uc  1 a 1 25 ]
-"1669
-[v main@pointer pointer `*.4uc  1 a 1 24 ]
-"1878
+"1681
+[v main@loop loop `uc  1 a 1 33 ]
+"1719
+[v main@idx idx `uc  1 a 1 32 ]
+"1682
+[v main@rcode rcode `uc  1 a 1 31 ]
+"1720
+[v main@pointer pointer `*.4uc  1 a 1 30 ]
+"1933
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eeread.c
 [v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
@@ -495,186 +515,202 @@
 [v eeprom_read@addr addr `uc  1 a 1 5 ]
 "12
 } 0
-"869 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"877 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _RcvGetChar RcvGetChar `(uc  1 e 1 0 ]
 {
-"871
+"879
 [v RcvGetChar@temp temp `uc  1 a 1 3 ]
-"883
+"891
 } 0
-"864
+"872
 [v _RcvIsDataIn RcvIsDataIn `(uc  1 e 1 0 ]
 {
-"867
+"875
 } 0
-"857
+"865
 [v _RcvClear RcvClear `(v  1 e 1 0 ]
 {
-"863
+"871
 } 0
-"27 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
+"53 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
 [v _InitTimeCapture InitTimeCapture `(v  1 e 1 0 ]
 {
-"49
+"76
 } 0
-"1597 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"1648 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _ExecuteCommand ExecuteCommand `(v  1 e 1 0 ]
 {
-"1625
+"1676
 } 0
-"1417
+"1446
 [v _ReadInputStatus ReadInputStatus `(v  1 e 1 0 ]
 {
-"1428
+"1457
 } 0
-"935
+"943
 [v _SendReadByteFrame SendReadByteFrame `(v  1 e 1 0 ]
 {
-"959
+"967
 } 0
-"1236
+"1263
 [v _ReadHoldingRegister ReadHoldingRegister `(v  1 e 1 0 ]
 {
-"1239
-[v ReadHoldingRegister@temp temp `us  1 a 2 13 ]
-"1238
-[v ReadHoldingRegister@ctemp1 ctemp1 `VEuc  1 a 1 17 ]
-"1240
-[v ReadHoldingRegister@Flag Flag `uc  1 a 1 12 ]
-"1238
-[v ReadHoldingRegister@ctemp3 ctemp3 `VEuc  1 a 1 16 ]
-[v ReadHoldingRegister@ctemp2 ctemp2 `VEuc  1 a 1 15 ]
-"1272
+[u S317 . 4 `ul 1 ULONG 4 0 `[2]us 1 USHORT 4 0 `[4]uc 1 BYTE 4 0 ]
+"1266
+[v ReadHoldingRegister@temp temp `S317  1 a 4 21 ]
+"1265
+[v ReadHoldingRegister@ctemp1 ctemp1 `VEuc  1 a 1 27 ]
+"1267
+[v ReadHoldingRegister@Flag Flag `uc  1 a 1 20 ]
+"1265
+[v ReadHoldingRegister@ctemp3 ctemp3 `VEuc  1 a 1 26 ]
+[v ReadHoldingRegister@ctemp2 ctemp2 `VEuc  1 a 1 25 ]
+"1301
 } 0
-"1358
+"1010
+[v _SendReadRegistersFrame SendReadRegistersFrame `(v  1 e 1 0 ]
+{
+[u S317 . 4 `ul 1 ULONG 4 0 `[2]us 1 USHORT 4 0 `[4]uc 1 BYTE 4 0 ]
+[v SendReadRegistersFrame@temp temp `S317  1 p 4 10 ]
+"1027
+} 0
+"1387
 [v _ReadCurrentRegister ReadCurrentRegister `(v  1 e 1 0 ]
 {
-"1360
+"1389
 [v ReadCurrentRegister@temp temp `us  1 a 2 19 ]
-"1361
+"1390
 [v ReadCurrentRegister@IOn IOn `uc  1 a 1 21 ]
-"1392
+"1421
 } 0
-"971
+"981
 [v _SendReadFrame SendReadFrame `(v  1 e 1 0 ]
 {
 [v SendReadFrame@value value `us  1 p 2 8 ]
-"998
+"1008
 } 0
-"1003
+"1030
 [v _SendBytesFrame SendBytesFrame `(v  1 e 1 0 ]
 {
 [v SendBytesFrame@_Address _Address `uc  1 a 1 wreg ]
-"1006
+"1033
 [v SendBytesFrame@NByte NByte `uc  1 a 1 15 ]
-"1008
+"1035
 [v SendBytesFrame@_temp _temp `uc  1 a 1 13 ]
-"1005
+"1032
 [v SendBytesFrame@loop loop `uc  1 a 1 12 ]
-"1003
+"1030
 [v SendBytesFrame@_Address _Address `uc  1 a 1 wreg ]
-"1005
+"1032
 [v SendBytesFrame@_Address _Address `uc  1 a 1 14 ]
-"1076
+"1103
 } 0
-"1300
+"1329
 [v _ReadVRef ReadVRef `(us  1 e 2 0 ]
 {
-"1307
+"1336
 } 0
-"1309
+"1338
 [v _ReadTSensor ReadTSensor `(us  1 e 2 0 ]
 {
-"1316
+"1345
 } 0
-"1275
+"1304
 [v _ReadIO ReadIO `(us  1 e 2 0 ]
 {
 [v ReadIO@Pin Pin `uc  1 a 1 wreg ]
-"1279
+"1308
 [v ReadIO@ioconfig ioconfig `uc  1 a 1 7 ]
-"1275
+"1304
 [v ReadIO@Pin Pin `uc  1 a 1 wreg ]
-"1278
+"1307
 [v ReadIO@Pin Pin `uc  1 a 1 8 ]
-"1298
+"1327
 } 0
-"159 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
+"137 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
 [v _ReadIOPin ReadIOPin `(uc  1 e 1 0 ]
 {
 [v ReadIOPin@Pin Pin `uc  1 a 1 wreg ]
-"162
+"140
 [v ReadIOPin@mask mask `uc  1 a 1 5 ]
-"161
+"139
 [v ReadIOPin@_tempb _tempb `uc  1 a 1 3 ]
-"159
+"137
 [v ReadIOPin@Pin Pin `uc  1 a 1 wreg ]
-"162
+"140
 [v ReadIOPin@Pin Pin `uc  1 a 1 4 ]
-"170
+"148
 } 0
-"616 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"619 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _ReadA2D ReadA2D `(us  1 e 2 0 ]
 {
 [v ReadA2D@channel channel `uc  1 a 1 wreg ]
-[u S225 . 2 `us 1 USHORT 2 0 `[2]uc 1 BYTE 2 0 ]
+[u S220 . 2 `us 1 USHORT 2 0 `[2]uc 1 BYTE 2 0 ]
+"622
+[v ReadA2D@value value `S220  1 a 2 1 ]
 "619
-[v ReadA2D@value value `S225  1 a 2 1 ]
-"616
 [v ReadA2D@channel channel `uc  1 a 1 wreg ]
-"620
+"623
 [v ReadA2D@channel channel `uc  1 a 1 0 ]
-"634
+"637
 } 0
-"1339
+"1368
 [v _ReadAllCoils ReadAllCoils `(us  1 e 2 0 ]
 {
-"1341
+"1370
 [v ReadAllCoils@stemp stemp `us  1 a 2 2 ]
-"1342
+"1371
 [v ReadAllCoils@loop loop `uc  1 a 1 4 ]
-"1350
+"1379
 } 0
-"1327
+"1356
 [v _GetInputPin GetInputPin `(uc  1 e 1 0 ]
 {
 [v GetInputPin@thePin thePin `uc  1 a 1 wreg ]
-"1329
+"1358
 [v GetInputPin@_tmp _tmp `uc  1 a 1 3 ]
-"1327
+"1356
 [v GetInputPin@thePin thePin `uc  1 a 1 wreg ]
-"1331
+"1360
 [v GetInputPin@thePin thePin `uc  1 a 1 4 ]
-"1337
+"1366
 } 0
-"1319
+"1348
 [v _MultipleRegister MultipleRegister `(uc  1 e 1 0 ]
 {
 [v MultipleRegister@_Address _Address `uc  1 a 1 wreg ]
 [v MultipleRegister@_Address _Address `uc  1 a 1 wreg ]
-"1321
+"1350
 [v MultipleRegister@_Address _Address `uc  1 a 1 3 ]
-"1324
+"1353
 } 0
-"1509
+"1538
 [v _PresetSingleRegister PresetSingleRegister `(v  1 e 1 0 ]
 {
-"1512
+"1541
 [v PresetSingleRegister@temp temp `uc  1 a 1 14 ]
-"1511
+"1540
 [v PresetSingleRegister@oldConfig oldConfig `uc  1 a 1 13 ]
-"1594
+"1645
 } 0
-"1472
+"1501
 [v _WriteAllCoils WriteAllCoils `(v  1 e 1 0 ]
 {
-"1475
+"1504
 [v WriteAllCoils@stemp stemp `us  1 a 2 9 ]
-"1474
+"1503
 [v WriteAllCoils@loop loop `uc  1 a 1 11 ]
-"1484
+"1513
 } 0
-"494
+"31 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
+[v _SetTimer1Clock SetTimer1Clock `(v  1 e 1 0 ]
+{
+[v SetTimer1Clock@value value `uc  1 a 1 wreg ]
+[v SetTimer1Clock@value value `uc  1 a 1 wreg ]
+[v SetTimer1Clock@value value `uc  1 a 1 3 ]
+"49
+} 0
+"497 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SetIOConfig SetIOConfig `(v  1 e 1 0 ]
 {
 [v SetIOConfig@Pin Pin `uc  1 a 1 wreg ]
@@ -682,91 +718,91 @@
 `uc 1 TIMER_CAPTURE 1 0 :1:3 
 `uc 1 NO_USED2 1 0 :4:4 
 ]
-"497
+"500
 [u S28 . 1 `S24 1 . 1 0 `uc 1 Config 1 0 ]
 [v SetIOConfig@ioconfig ioconfig `S28  1 a 1 0 ]
-"494
+"497
 [v SetIOConfig@Pin Pin `uc  1 a 1 wreg ]
-"499
+"502
 [v SetIOConfig@ValidCCP ValidCCP `DC[10]uc  1 s 10 ValidCCP ]
-"501
+"504
 [v SetIOConfig@Pin Pin `uc  1 a 1 1 ]
-"609
+"612
 } 0
-"52 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
+"79 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\TimeCapture.c
 [v _SetTimeCaptureConfig SetTimeCaptureConfig `(v  1 e 1 0 ]
 {
 [v SetTimeCaptureConfig@Pin Pin `uc  1 a 1 wreg ]
 [v SetTimeCaptureConfig@Pin Pin `uc  1 a 1 wreg ]
 [v SetTimeCaptureConfig@detection detection `ui  1 p 2 2 ]
-"54
+"81
 [v SetTimeCaptureConfig@Pin Pin `uc  1 a 1 4 ]
-"106
+"133
 } 0
-"463 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"466 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SetPullUp SetPullUp `(v  1 e 1 0 ]
 {
 [v SetPullUp@Pin Pin `uc  1 a 1 wreg ]
 [v SetPullUp@Pin Pin `uc  1 a 1 wreg ]
 [v SetPullUp@PullUp PullUp `uc  1 p 1 2 ]
-"465
+"468
 [v SetPullUp@Pin Pin `uc  1 a 1 4 ]
-"474
+"477
 } 0
-"393
+"396
 [v _SetOutputConfig SetOutputConfig `(v  1 e 1 0 ]
 {
 [v SetOutputConfig@Pin Pin `uc  1 a 1 wreg ]
-"397
+"400
 [v SetOutputConfig@_tmp _tmp `uc  1 a 1 4 ]
-"396
+"399
 [v SetOutputConfig@ioconfig ioconfig `uc  1 a 1 3 ]
-"393
-[v SetOutputConfig@Pin Pin `uc  1 a 1 wreg ]
 "396
+[v SetOutputConfig@Pin Pin `uc  1 a 1 wreg ]
+"399
 [v SetOutputConfig@Pin Pin `uc  1 a 1 5 ]
-"433
+"436
 } 0
-"476
+"479
 [v _SetInputConfig SetInputConfig `(v  1 e 1 0 ]
 {
 [v SetInputConfig@Pin Pin `uc  1 a 1 wreg ]
-"479
+"482
 [v SetInputConfig@_ntmp _ntmp `uc  1 a 1 4 ]
-"478
+"481
 [v SetInputConfig@_tmp _tmp `uc  1 a 1 3 ]
-"476
+"479
 [v SetInputConfig@Pin Pin `uc  1 a 1 wreg ]
-"478
+"481
 [v SetInputConfig@Pin Pin `uc  1 a 1 5 ]
-"491
+"494
 } 0
-"215 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
+"193 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
 [v _SetIOChange SetIOChange `(v  1 e 1 0 ]
 {
 [v SetIOChange@Pin Pin `uc  1 a 1 wreg ]
-"217
+"195
 [v SetIOChange@_temp _temp `uc  1 a 1 4 ]
-"215
+"193
 [v SetIOChange@Pin Pin `uc  1 a 1 wreg ]
 [v SetIOChange@value value `uc  1 p 1 2 ]
-"218
+"196
 [v SetIOChange@Pin Pin `uc  1 a 1 5 ]
-"243
+"221
 } 0
-"361 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"364 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SetAnalogConfig SetAnalogConfig `(v  1 e 1 0 ]
 {
 [v SetAnalogConfig@Pin Pin `uc  1 a 1 wreg ]
-"366
+"369
 [v SetAnalogConfig@_tmp _tmp `uc  1 a 1 5 ]
-"365
+"368
 [v SetAnalogConfig@ioconfig ioconfig `uc  1 a 1 3 ]
-"361
+"364
 [v SetAnalogConfig@Pin Pin `uc  1 a 1 wreg ]
-"365
+"368
 [v SetAnalogConfig@Pin Pin `uc  1 a 1 4 ]
-"387
+"390
 } 0
 "123 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
 [v _ResetIOCycle ResetIOCycle `(v  1 e 1 0 ]
@@ -775,14 +811,14 @@
 [v ResetIOCycle@loop loop `uc  1 a 1 3 ]
 "134
 } 0
-"345 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"348 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SaveSetting SaveSetting `(v  1 e 1 0 ]
 {
-"347
+"350
 [v SaveSetting@idx idx `uc  1 a 1 1 ]
-"348
+"351
 [v SaveSetting@pointer pointer `*.4uc  1 a 1 0 ]
-"352
+"355
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eewrite.c
 [v _eeprom_write eeprom_write `(v  1 e 1 0 ]
@@ -793,80 +829,80 @@
 [v eeprom_write@addr addr `uc  1 a 1 5 ]
 "9
 } 0
-"1486 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"1515 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _ForceSingleCoil ForceSingleCoil `(v  1 e 1 0 ]
 {
-"1497
+"1526
 } 0
-"1464
+"1493
 [v _SetSingleCoil SetSingleCoil `(v  1 e 1 0 ]
 {
 [v SetSingleCoil@thePin thePin `uc  1 a 1 wreg ]
 [v SetSingleCoil@thePin thePin `uc  1 a 1 wreg ]
 [v SetSingleCoil@value value `uc  1 p 1 0 ]
-"1467
+"1496
 [v SetSingleCoil@thePin thePin `uc  1 a 1 2 ]
-"1470
+"1499
 } 0
-"172 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
+"150 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
 [v _WriteIO WriteIO `(v  1 e 1 0 ]
 {
 [v WriteIO@Pin Pin `uc  1 a 1 wreg ]
-"176
+"154
 [v WriteIO@nmask nmask `uc  1 a 1 5 ]
-"175
+"153
 [v WriteIO@mask mask `uc  1 a 1 4 ]
-"172
+"150
 [v WriteIO@Pin Pin `uc  1 a 1 wreg ]
 [v WriteIO@value value `uc  1 p 1 2 ]
-"175
+"153
 [v WriteIO@Pin Pin `uc  1 a 1 6 ]
-"212
+"190
 } 0
-"1093 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"1120 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _SendPresetFrame SendPresetFrame `(v  1 e 1 0 ]
 {
-"1130
+"1157
 } 0
-"914
+"922
 [v _SendFrameError SendFrameError `(v  1 e 1 0 ]
 {
 [v SendFrameError@ErrorCode ErrorCode `uc  1 a 1 wreg ]
 [v SendFrameError@ErrorCode ErrorCode `uc  1 a 1 wreg ]
-"916
+"924
 [v SendFrameError@ErrorCode ErrorCode `uc  1 a 1 9 ]
-"920
+"928
 } 0
-"886
+"894
 [v _SendModbusPacket SendModbusPacket `(v  1 e 1 0 ]
 {
 [v SendModbusPacket@BufferSize BufferSize `uc  1 a 1 wreg ]
-"888
+"896
 [v SendModbusPacket@CRC CRC `us  1 a 2 5 ]
-"889
+"897
 [v SendModbusPacket@loop loop `uc  1 a 1 7 ]
-"886
+"894
 [v SendModbusPacket@BufferSize BufferSize `uc  1 a 1 wreg ]
-"891
+"899
 [v SendModbusPacket@BufferSize BufferSize `uc  1 a 1 4 ]
-"905
+"913
 } 0
-"835
+"843
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@char_out char_out `uc  1 a 1 wreg ]
-"837
+"845
 [v putch@temp temp `uc  1 a 1 4 ]
-"835
+"843
 [v putch@char_out char_out `uc  1 a 1 wreg ]
-"839
+"847
 [v putch@char_out char_out `uc  1 a 1 3 ]
-"855
+"863
 } 0
-"907
+"915
 [v _InitModbusPacket InitModbusPacket `(v  1 e 1 0 ]
 {
-"911
+"919
 } 0
 "81 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\IOCycle.c
 [v _DoIOCycle DoIOCycle `(v  1 e 1 0 ]
@@ -901,17 +937,17 @@
 {
 "55
 } 0
-"1133 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"1160 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _DecodeSerial DecodeSerial `(uc  1 e 1 0 ]
 {
 [v DecodeSerial@msg msg `*.4uc  1 a 1 wreg ]
-"1137
+"1164
 [v DecodeSerial@CalcCRC CalcCRC `us  1 a 2 5 ]
-"1136
+"1163
 [v DecodeSerial@rcode rcode `uc  1 a 1 7 ]
-"1133
+"1160
 [v DecodeSerial@msg msg `*.4uc  1 a 1 wreg ]
-"1187
+"1214
 } 0
 "94 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\CRC16.c
 [v _CRC16 CRC16 `(us  1 e 2 0 ]
@@ -928,10 +964,10 @@
 [v CRC16@addr addr `*.4uc  1 a 1 0 ]
 "112
 } 0
-"638 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
+"641 C:\Users\Daniel\MPLABXProjects\PIC_Time_detection_IO\main.c
 [v _isr isr `II(v  1 s 1 isr ]
 {
-"639
+"642
 [v isr@_temp _temp `VEuc  1 s 1 temp ]
-"833
+"841
 } 0

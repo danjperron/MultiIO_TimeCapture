@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.44\dat\en_msgs.txt -cs \
   -h+dist/default/production\PIC_Time_detection_IO.production.sym \
   --cmf=dist/default/production\PIC_Time_detection_IO.production.cmf -z \
-  -Q16F1827 -oC:\Users\Daniel\AppData\Local\Temp\sac0.2 \
+  -Q16F1827 -oC:\Users\Daniel\AppData\Local\Temp\sc08.2 \
   -Mdist/default/production/PIC_Time_detection_IO.production.map -E1 \
   -ver=XC8 -ASTACK=02140h-0216fh -pstack=STACK -ACODE=00h-07FFhx2 \
   -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 \
@@ -29,7 +29,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Daniel\AppData\Local\Temp\sac0.obj \
+  C:\Users\Daniel\AppData\Local\Temp\sc08.obj \
   dist/default/production\PIC_Time_detection_IO.production.obj 
 
 Object code version is 3.11
@@ -39,132 +39,139 @@ Machine type is 16F1827
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Daniel\AppData\Local\Temp\sac0.obj
-                end_init                            151      151        2        8       0
+C:\Users\Daniel\AppData\Local\Temp\sc08.obj
+                end_init                            157      157        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\PIC_Time_detection_IO.production.obj
-                cinit                               153      153       1F        8       0
-                intentry                              4        4      14D        8       0
+                cinit                               159      159       22        8       0
+                intentry                              4        4      153        8       0
                 eeprom_data                           0     F000       10    1E000       3
-                text46                              5B8      5B8       43        8       0
-                text45                              6F7      6F7       3A        8       0
-                text44                              D05      D05        8     1A0A       0
-                text43                              F2A      F2A       27     1E54       0
-                text42                              D51      D51       11     1AA2       0
-                text41                              769      769       38        8       0
-                text40                              D16      D16        C     1A2C       0
-                text39                              EBC      EBC       24     1D78       0
-                text38                              FD0      FD0       30     1FA0       0
-                text37                              DBF      DBF       16     1B7E       0
-                text36                              DD5      DD5       17     1BAA       0
-                text35                              63C      63C       41        8       0
-                text34                              D73      D73       12     1AE6       0
-                text33                              E1E      E1E       1D     1C3C       0
-                text32                              E99      E99       23     1D32       0
-                text31                              E3B      E3B       1F     1C76       0
-                text30                              D85      D85       13     1B0A       0
-                text29                              67D      67D       3E        8       0
-                text28                              F7A      F7A       2A     1EF4       0
-                text27                              7A1      7A1       31        8       0
-                text26                              FA4      FA4       2C     1F48       0
-                text25                              F04      F04       26     1E08       0
-                text24                              51A      51A       50        8       0
-                text23                              29E      29E       FA        8       0
-                text22                              EE0      EE0       24     1DC0       0
-                text21                              398      398       9C        8       0
-                text20                              D31      D31       10     1A62       0
-                text19                              E5A      E5A       1F     1CB4       0
-                text18                              F51      F51       29     1EA2       0
-                text17                              6BB      6BB       3C        8       0
-                text16                              E79      E79       20     1CF2       0
-                text15                              731      731       38        8       0
-                text14                              D22      D22        F     1A44       0
-                text13                              D62      D62       11     1AC4       0
-                text12                              56A      56A       4E        8       0
-                text11                              DAB      DAB       14     1B56       0
-                text10                              4AF      4AF       6B        8       0
-                text9                               434      434       7B        8       0
-                text8                               D41      D41       10     1A82       0
-                text7                               D98      D98       13     1B30       0
-                text6                               5FB      5FB       41        8       0
-                text5                               7D2      7D2       2E        8       0
-                text4                               CF9      CF9        6     19F2       0
-                text3                               D0D      D0D        9     1A1A       0
-                text2                               E04      E04       1A     1C08       0
-                text1                               DEC      DEC       18     1BD8       0
-                maintext                            172      172      12C        8       0
-                cstackBANK0                          4E       4E       1C       20       1
+                text48                              675      675       43        8       0
+                text47                              7B4      7B4       3A        8       0
+                text46                              BE5      BE5        8     17CA       0
+                text45                              DF8      DF8       27     1BF0       0
+                text44                              C31      C31       11     1862       0
+                text43                              F90      F90       38     1F20       0
+                text42                              BF6      BF6        C     17EC       0
+                text41                              D8A      D8A       24     1B14       0
+                text40                              EC6      EC6       30     1D8C       0
+                text39                              C8D      C8D       16     191A       0
+                text38                              CA3      CA3       17     1946       0
+                text37                              6F9      6F9       41        8       0
+                text36                              7EE      7EE       12        8       0
+                text35                              CEC      CEC       1D     19D8       0
+                text34                              D67      D67       23     1ACE       0
+                text33                              D09      D09       1F     1A12       0
+                text32                              C53      C53       13     18A6       0
+                text31                              73A      73A       3E        8       0
+                text30                              E70      E70       2A     1CE0       0
+                text29                              EF6      EF6       31     1DEC       0
+                text28                              E9A      E9A       2C     1D34       0
+                text27                              DD2      DD2       26     1BA4       0
+                text26                              5D7      5D7       50        8       0
+                text25                              3EE      3EE       F9        8       0
+                text24                              E1F      E1F       28     1C3E       0
+                text23                              DAE      DAE       24     1B5C       0
+                text22                              17B      17B      141        8       0
+                text21                              C11      C11       10     1822       0
+                text20                              D28      D28       1F     1A50       0
+                text19                              E47      E47       29     1C8E       0
+                text18                              778      778       3C        8       0
+                text17                              D47      D47       20     1A8E       0
+                text16                              FC8      FC8       38     1F90       0
+                text15                              C02      C02        F     1804       0
+                text14                              C42      C42       11     1884       0
+                text13                              627      627       4E        8       0
+                text12                              C79      C79       14     18F2       0
+                text11                              56C      56C       6B        8       0
+                text10                              F59      F59       37     1EB2       0
+                text9                               4E7      4E7       85        8       0
+                text8                               C21      C21       10     1842       0
+                text7                               C66      C66       13     18CC       0
+                text6                               6B8      6B8       41        8       0
+                text5                               F27      F27       32     1E4E       0
+                text4                               BD9      BD9        6     17B2       0
+                text3                               BED      BED        9     17DA       0
+                text2                               CD2      CD2       1A     19A4       0
+                text1                               CBA      CBA       18     1974       0
+                maintext                            2BC      2BC      132        8       0
+                cstackBANK0                          4A       4A       22       20       1
                 cstackCOMMONl                        79       79        1       70       1
                 cstackCOMMONh                        70       70        7       70       1
-                clrtext                             CFF      CFF        6     19FE       0
+                clrtext                             BDF      BDF        6     17BE       0
                 bssBANK2                            120      120       40      120       1
-                bssBANK1                             A0       A0       4B       A0       1
-                bssBANK0                             20       20       2E       20       1
-                bitbssBANK0                         350       6A        6       20       1     8
+                bssBANK1                             A0       A0       4E       A0       1
+                dataBANK0                            6D       6D        1       20       1
+                bssBANK0                             20       20       2A       20       1
+                bitbssBANK0                         360       6C        6       20       1     8
                 bssCOMMONh                           78       78        1       70       1
                 bitbssCOMMONh                       3B8       77        3       70       1     8
                 stringtext4                         820      820        A     1000       0
                 stringtext3                         816      816        A     1000       0
                 stringtext2                         80B      80B        B     1000       0
                 stringtext1                         800      800        B     1000       0
+                idataBANK0                            3        3        1        6       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                            151      151        2         0
-                cinit                               153      153       1F         0
-                intentry                              4        4      14D         0
+                end_init                            157      157        2         0
+                cinit                               159      159       22         0
+                intentry                              4        4      153         0
                 reset_vec                             0        0        2         0
-                text46                              5B8      5B8       43         0
-                text45                              6F7      6F7       3A         0
-                text44                              D05      D05        8         0
-                text43                              F2A      F2A       27         0
-                text42                              D51      D51       11         0
-                text41                              769      769       38         0
-                text40                              D16      D16        C         0
-                text39                              EBC      EBC       24         0
-                text38                              FD0      FD0       30         0
-                text37                              DBF      DBF       16         0
-                text36                              DD5      DD5       17         0
-                text35                              63C      63C       41         0
-                text34                              D73      D73       12         0
-                text33                              E1E      E1E       1D         0
-                text32                              E99      E99       23         0
-                text31                              E3B      E3B       1F         0
-                text30                              D85      D85       13         0
-                text29                              67D      67D       3E         0
-                text28                              F7A      F7A       2A         0
-                text27                              7A1      7A1       31         0
-                text26                              FA4      FA4       2C         0
-                text25                              F04      F04       26         0
-                text24                              51A      51A       50         0
-                text23                              29E      29E       FA         0
-                text22                              EE0      EE0       24         0
-                text21                              398      398       9C         0
-                text20                              D31      D31       10         0
-                text19                              E5A      E5A       1F         0
-                text18                              F51      F51       29         0
-                text17                              6BB      6BB       3C         0
-                text16                              E79      E79       20         0
-                text15                              731      731       38         0
-                text14                              D22      D22        F         0
-                text13                              D62      D62       11         0
-                text12                              56A      56A       4E         0
-                text11                              DAB      DAB       14         0
-                text10                              4AF      4AF       6B         0
-                text9                               434      434       7B         0
-                text8                               D41      D41       10         0
-                text7                               D98      D98       13         0
-                text6                               5FB      5FB       41         0
-                text5                               7D2      7D2       2E         0
-                text4                               CF9      CF9        6         0
-                text3                               D0D      D0D        9         0
-                text2                               E04      E04       1A         0
-                text1                               DEC      DEC       18         0
-                maintext                            172      172      12C         0
-                clrtext                             CFF      CFF        6         0
+                text48                              675      675       43         0
+                text47                              7B4      7B4       3A         0
+                text46                              BE5      BE5        8         0
+                text45                              DF8      DF8       27         0
+                text44                              C31      C31       11         0
+                text43                              F90      F90       38         0
+                text42                              BF6      BF6        C         0
+                text41                              D8A      D8A       24         0
+                text40                              EC6      EC6       30         0
+                text39                              C8D      C8D       16         0
+                text38                              CA3      CA3       17         0
+                text37                              6F9      6F9       41         0
+                text36                              7EE      7EE       12         0
+                text35                              CEC      CEC       1D         0
+                text34                              D67      D67       23         0
+                text33                              D09      D09       1F         0
+                text32                              C53      C53       13         0
+                text31                              73A      73A       3E         0
+                text30                              E70      E70       2A         0
+                text29                              EF6      EF6       31         0
+                text28                              E9A      E9A       2C         0
+                text27                              DD2      DD2       26         0
+                text26                              5D7      5D7       50         0
+                text25                              3EE      3EE       F9         0
+                text24                              E1F      E1F       28         0
+                text23                              DAE      DAE       24         0
+                text22                              17B      17B      141         0
+                text21                              C11      C11       10         0
+                text20                              D28      D28       1F         0
+                text19                              E47      E47       29         0
+                text18                              778      778       3C         0
+                text17                              D47      D47       20         0
+                text16                              FC8      FC8       38         0
+                text15                              C02      C02        F         0
+                text14                              C42      C42       11         0
+                text13                              627      627       4E         0
+                text12                              C79      C79       14         0
+                text11                              56C      56C       6B         0
+                text10                              F59      F59       37         0
+                text9                               4E7      4E7       85         0
+                text8                               C21      C21       10         0
+                text7                               C66      C66       13         0
+                text6                               6B8      6B8       41         0
+                text5                               F27      F27       32         0
+                text4                               BD9      BD9        6         0
+                text3                               BED      BED        9         0
+                text2                               CD2      CD2       1A         0
+                text1                               CBA      CBA       18         0
+                maintext                            2BC      2BC      132         0
+                clrtext                             BDF      BDF        6         0
+                idataBANK0                            3        3        1         0
 
         CLASS   STRCODE        
                 stringtext4                         820      820        A         0
@@ -185,12 +192,13 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bitbssCOMMONh                       3B8       77        3         1
 
         CLASS   BANK0          
-                cstackBANK0                          4E       4E       1C         1
-                bssBANK0                             20       20       2E         1
-                bitbssBANK0                         350       6A        6         1
+                cstackBANK0                          4A       4A       22         1
+                dataBANK0                            6D       6D        1         1
+                bssBANK0                             20       20       2A         1
+                bitbssBANK0                         360       6C        6         1
 
         CLASS   BANK1          
-                bssBANK1                             A0       A0       4B         1
+                bssBANK1                             A0       A0       4E         1
 
         CLASS   BANK2          
                 bssBANK2                            120      120       40         1
@@ -340,43 +348,49 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
+                idataBANK0                     000003  000001  000004         6       0  CODE        2
                 intentry                       000004  0007FC  000800         8       0  CODE        2
-                bssBANK0                       000020  00004B  00006B        20       1  BANK0       1
+                bssBANK0                       000020  00004E  00006E        20       1  BANK0       1
                 cstackCOMMONh                  000070  00000A  00007A        70       1  COMMON      1
-                bssBANK1                       0000A0  00004B  0000EB        A0       1  BANK1       1
+                bssBANK1                       0000A0  00004E  0000EE        A0       1  BANK1       1
                 bssBANK2                       000120  000040  000160       120       1  BANK2       1
                 stringtext1                    000800  00002A  00082A      1000       0  STRCODE     2
-                text4                          000CF9  000006  000CFF      19F2       0  CODE        2
-                clrtext                        000CFF  000006  000D05      19FE       0  CODE        2
-                text44                         000D05  000008  000D0D      1A0A       0  CODE        2
-                text3                          000D0D  000009  000D16      1A1A       0  CODE        2
-                text40                         000D16  00000C  000D22      1A2C       0  CODE        2
-                text14                         000D22  00000F  000D31      1A44       0  CODE        2
-                text20                         000D31  000010  000D41      1A62       0  CODE        2
-                text8                          000D41  000010  000D51      1A82       0  CODE        2
-                text42                         000D51  000011  000D62      1AA2       0  CODE        2
-                text13                         000D62  000011  000D73      1AC4       0  CODE        2
-                text34                         000D73  000012  000D85      1AE6       0  CODE        2
-                text30                         000D85  000013  000D98      1B0A       0  CODE        2
-                text7                          000D98  000013  000DAB      1B30       0  CODE        2
-                text11                         000DAB  000014  000DBF      1B56       0  CODE        2
-                text37                         000DBF  000016  000DD5      1B7E       0  CODE        2
-                text36                         000DD5  000017  000DEC      1BAA       0  CODE        2
-                text1                          000DEC  000018  000E04      1BD8       0  CODE        2
-                text2                          000E04  00001A  000E1E      1C08       0  CODE        2
-                text33                         000E1E  00001D  000E3B      1C3C       0  CODE        2
-                text31                         000E3B  00001F  000E5A      1C76       0  CODE        2
-                text19                         000E5A  00001F  000E79      1CB4       0  CODE        2
-                text16                         000E79  000020  000E99      1CF2       0  CODE        2
-                text32                         000E99  000023  000EBC      1D32       0  CODE        2
-                text39                         000EBC  000024  000EE0      1D78       0  CODE        2
-                text22                         000EE0  000024  000F04      1DC0       0  CODE        2
-                text25                         000F04  000026  000F2A      1E08       0  CODE        2
-                text43                         000F2A  000027  000F51      1E54       0  CODE        2
-                text18                         000F51  000029  000F7A      1EA2       0  CODE        2
-                text28                         000F7A  00002A  000FA4      1EF4       0  CODE        2
-                text26                         000FA4  00002C  000FD0      1F48       0  CODE        2
-                text38                         000FD0  000030  001000      1FA0       0  CODE        2
+                text4                          000BD9  000006  000BDF      17B2       0  CODE        2
+                clrtext                        000BDF  000006  000BE5      17BE       0  CODE        2
+                text46                         000BE5  000008  000BED      17CA       0  CODE        2
+                text3                          000BED  000009  000BF6      17DA       0  CODE        2
+                text42                         000BF6  00000C  000C02      17EC       0  CODE        2
+                text15                         000C02  00000F  000C11      1804       0  CODE        2
+                text21                         000C11  000010  000C21      1822       0  CODE        2
+                text8                          000C21  000010  000C31      1842       0  CODE        2
+                text44                         000C31  000011  000C42      1862       0  CODE        2
+                text14                         000C42  000011  000C53      1884       0  CODE        2
+                text32                         000C53  000013  000C66      18A6       0  CODE        2
+                text7                          000C66  000013  000C79      18CC       0  CODE        2
+                text12                         000C79  000014  000C8D      18F2       0  CODE        2
+                text39                         000C8D  000016  000CA3      191A       0  CODE        2
+                text38                         000CA3  000017  000CBA      1946       0  CODE        2
+                text1                          000CBA  000018  000CD2      1974       0  CODE        2
+                text2                          000CD2  00001A  000CEC      19A4       0  CODE        2
+                text35                         000CEC  00001D  000D09      19D8       0  CODE        2
+                text33                         000D09  00001F  000D28      1A12       0  CODE        2
+                text20                         000D28  00001F  000D47      1A50       0  CODE        2
+                text17                         000D47  000020  000D67      1A8E       0  CODE        2
+                text34                         000D67  000023  000D8A      1ACE       0  CODE        2
+                text41                         000D8A  000024  000DAE      1B14       0  CODE        2
+                text23                         000DAE  000024  000DD2      1B5C       0  CODE        2
+                text27                         000DD2  000026  000DF8      1BA4       0  CODE        2
+                text45                         000DF8  000027  000E1F      1BF0       0  CODE        2
+                text24                         000E1F  000028  000E47      1C3E       0  CODE        2
+                text19                         000E47  000029  000E70      1C8E       0  CODE        2
+                text30                         000E70  00002A  000E9A      1CE0       0  CODE        2
+                text28                         000E9A  00002C  000EC6      1D34       0  CODE        2
+                text40                         000EC6  000030  000EF6      1D8C       0  CODE        2
+                text29                         000EF6  000031  000F27      1DEC       0  CODE        2
+                text5                          000F27  000032  000F59      1E4E       0  CODE        2
+                text10                         000F59  000037  000F90      1EB2       0  CODE        2
+                text43                         000F90  000038  000FC8      1F20       0  CODE        2
+                text16                         000FC8  000038  001000      1F90       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
                 eeprom_data                    00F000  000010  00F010     1E000       3  EEDATA      2
 
@@ -384,24 +398,24 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0006B-0006F               5           1
-        BANK1            000EB-000EF               5           1
+        BANK0            0006E-0006F               2           1
+        BANK1            000EE-000EF               2           1
         BANK2            00160-0016F              10           1
         BANK3            001DC-001DF               4           1
                          001E5-001E5               1
         BANK4            00220-0024F              30           1
         BIGRAM           02000-0216F             170           1
-        CODE             00002-00003               2           2
-                         0082A-00CF8             4CF
+        CODE             00002-00002               1           2
+                         0082A-00BD8             3AF
         COMMON           0007A-0007D               4           1
-        CONST            00002-00003               2           2
-                         0082A-00CF8             100
+        CONST            00002-00002               1           2
+                         0082A-00BD8             100
         EEDATA           0F010-0F0FF              F0           2
-        ENTRY            00002-00003               2           2
-                         0082A-00CF8             100
+        ENTRY            00002-00002               1           2
+                         0082A-00BD8             100
         IDLOC            08000-08003               4           2
-        RAM              0006B-0006F               5           1
-                         000EB-000EF               5
+        RAM              0006E-0006F               2           1
+                         000EE-000EF               2
                          00160-0016F              10
                          001DC-001DF               4
                          001E5-001E5               1
@@ -439,807 +453,825 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
         STACK            02140-0216F              30           1
-        STRCODE          00002-00003               2           2
-                         0082A-00CF8             4CF
-        STRING           00002-00003               2           2
-                         0082A-00CF8             100
+        STRCODE          00002-00002               1           2
+                         0082A-00BD8             3AF
+        STRING           00002-00002               1           2
+                         0082A-00BD8             100
 
                                   Symbol Table
 
-?_CRC16                        cstackCOMMONh 00072
-?_ReadA2D                      cstackCOMMONh 00072
-?_ReadAllCoils                 cstackCOMMONh 00075
-?_ReadIO                       cstackBANK0   00051
-?_ReadTSensor                  cstackBANK0   00051
-?_ReadVRef                     cstackBANK0   00051
-CRC16@addr                     cstackBANK0   0004E
-CRC16@crc                      cstackBANK0   00050
-CRC16@i                        cstackBANK0   0004F
-CRC16@num                      cstackCOMMONh 00072
-DecodeSerial@CalcCRC           cstackBANK0   00053
-DecodeSerial@msg               cstackBANK0   00052
-DecodeSerial@rcode             cstackBANK0   00055
-DoIOCycle@SensorPt             cstackCOMMONh 00076
-GetInputPin@_tmp               cstackCOMMONh 00073
-GetInputPin@thePin             cstackCOMMONh 00074
-MultipleRegister@_Address      cstackCOMMONh 00073
-PresetSingleRegister@oldConfig cstackBANK0   0005B
-PresetSingleRegister@temp      cstackBANK0   0005C
-RcvGetChar@temp                cstackCOMMONh 00073
-ReadA2D@channel                cstackBANK0   0004E
-ReadA2D@value                  cstackBANK0   0004F
-ReadAllCoils@loop              cstackBANK0   00052
-ReadAllCoils@stemp             cstackBANK0   00050
-ReadCurrentRegister@IOn        cstackBANK0   00063
-ReadCurrentRegister@temp       cstackBANK0   00061
-ReadHoldingRegister@Flag       cstackBANK0   0005A
-ReadHoldingRegister@ctemp1     cstackBANK0   0005F
-ReadHoldingRegister@ctemp2     cstackBANK0   0005D
-ReadHoldingRegister@ctemp3     cstackBANK0   0005E
-ReadHoldingRegister@temp       cstackBANK0   0005B
-ReadIO@Pin                     cstackBANK0   00056
-ReadIO@ioconfig                cstackBANK0   00055
-ReadIOPin@Pin                  cstackCOMMONh 00074
-ReadIOPin@_tempb               cstackCOMMONh 00073
-ReadIOPin@mask                 cstackCOMMONh 00075
-ResetIOCycle@loop              cstackCOMMONh 00073
-SaveSetting@idx                cstackBANK0   0004F
-SaveSetting@pointer            cstackBANK0   0004E
-ScanNextIOPin@loop             cstackCOMMONh 00073
-SendBytesFrame@NByte           cstackBANK0   0005D
-SendBytesFrame@_Address        cstackBANK0   0005C
-SendBytesFrame@_temp           cstackBANK0   0005B
-SendBytesFrame@loop            cstackBANK0   0005A
-SendFrameError@ErrorCode       cstackBANK0   00057
-SendModbusPacket@BufferSize    cstackBANK0   00052
-SendModbusPacket@CRC           cstackBANK0   00053
-SendModbusPacket@loop          cstackBANK0   00055
-SendReadFrame@value            cstackBANK0   00056
-SetAnalogConfig@Pin            cstackCOMMONh 00074
-SetAnalogConfig@_tmp           cstackCOMMONh 00075
-SetAnalogConfig@ioconfig       cstackCOMMONh 00073
-SetIOChange@Pin                cstackCOMMONh 00075
-SetIOChange@_temp              cstackCOMMONh 00074
-SetIOChange@value              cstackCOMMONh 00072
-SetIOConfig@Pin                cstackBANK0   0004F
-SetIOConfig@ValidCCP           stringtext3   00816
-SetIOConfig@ioconfig           cstackBANK0   0004E
-SetInputConfig@Pin             cstackCOMMONh 00075
-SetInputConfig@_ntmp           cstackCOMMONh 00074
-SetInputConfig@_tmp            cstackCOMMONh 00073
-SetOutputConfig@Pin            cstackCOMMONh 00075
-SetOutputConfig@_tmp           cstackCOMMONh 00074
-SetOutputConfig@ioconfig       cstackCOMMONh 00073
-SetPullUp@Pin                  cstackCOMMONh 00074
-SetPullUp@PullUp               cstackCOMMONh 00072
-SetSingleCoil@thePin           cstackBANK0   00050
-SetSingleCoil@value            cstackBANK0   0004E
-SetTimeCaptureConfig@Pin       cstackCOMMONh 00074
-SetTimeCaptureConfig@detection cstackCOMMONh 00072
-WriteAllCoils@loop             cstackBANK0   00059
-WriteAllCoils@stemp            cstackBANK0   00057
-WriteIO@Pin                    cstackCOMMONh 00076
-WriteIO@mask                   cstackCOMMONh 00074
-WriteIO@nmask                  cstackCOMMONh 00075
-WriteIO@value                  cstackCOMMONh 00072
-_ABDEN                         (abs)         00CF8
-_ADCON0                        (abs)         0009D
-_ADCON0bits                    (abs)         0009D
-_ADCON1                        (abs)         0009E
-_ADCON1bits                    (abs)         0009E
-_ADIE                          (abs)         0048E
-_ADIF                          (abs)         0008E
-_ADON                          (abs)         004E8
-_ADRESH                        (abs)         0009C
-_ADRESL                        (abs)         0009B
-_ANSELA                        (abs)         0018C
-_ANSELB                        (abs)         0018D
-_APFCON0                       (abs)         0011D
-_APFCON1                       (abs)         0011E
-_BRG16                         (abs)         00CFB
-_BRGH                          (abs)         00CF2
-_BadIO                         bssBANK0      00042
-_BitCount                      bssBANK0      00048
-_ByteIndex                     bssBANK0      00045
-_CARRY                         (abs)         00018
-_CCP1CON                       (abs)         00293
-_CCP1IE                        (abs)         0048A
-_CCP1IF                        (abs)         0008A
-_CCP2CON                       (abs)         0029A
-_CCP2IE                        (abs)         00490
-_CCP2IF                        (abs)         00090
-_CCP3CON                       (abs)         00313
-_CCP3IE                        (abs)         0049C
-_CCP3IF                        (abs)         0009C
-_CCP4CON                       (abs)         0031A
-_CCP4IE                        (abs)         0049D
-_CCP4IF                        (abs)         0009D
-_CCPR1H                        (abs)         00292
-_CCPR1L                        (abs)         00291
-_CCPR2H                        (abs)         00299
-_CCPR2L                        (abs)         00298
-_CCPR3H                        (abs)         00312
-_CCPR3L                        (abs)         00311
-_CCPR4H                        (abs)         00319
-_CCPR4L                        (abs)         00318
-_CCPTMRS                       (abs)         0029E
-_COUNTER                       (abs)         001E6
-_CPSON                         (abs)         000F7
-_CRC16                         text46        005B8
-_CREN                          (abs)         00CEC
-_CSMASK                        stringtext4   00820
-_CSum                          bssBANK0      00046
-_CurrentIOCycle                bssBANK0      0004A
-_CurrentIOPin                  bssBANK0      0004B
-_CurrentIOSensor               bssBANK0      0004C
-_CurrentIOStatus               bssBANK0      0004D
-_DHTFlag                       (abs)         00070
-_DealWithError                 text44        00D05
-_DecodeSerial                  text45        006F7
-_DoIOCycle                     text41        00769
-_EEADR                         (abs)         00191
-_EECON1                        (abs)         00195
-_EECON2                        (abs)         00196
-_EEDATA                        (abs)         00193
-_EnableConfigChange            bitbssBANK0   00351
-_ExecuteCommand                text6         005FB
-_FVRCON                        (abs)         00117
-_FVRCONbits                    (abs)         00117
-_ForceReset                    bitbssBANK0   00350
-_ForceSingleCoil               text33        00E1E
-_GIE                           (abs)         0005F
-_GetInputPin                   text19        00E5A
-_GotCapSenseFlag               bitbssCOMMONh 003B9
-_ICOUNTER                      (abs)         001E0
-_INTCON                        (abs)         0000B
-_IOCBF                         (abs)         00396
-_IOCBN                         (abs)         00395
-_IOCBP                         (abs)         00394
-_IOCIE                         (abs)         0005B
-_IOCounterFlag                 (abs)         00071
-_IOCounterReset                (abs)         00072
-_IOMASK                        stringtext2   0080B
-_IOSensorData                  (abs)         001A0
-_InFiFo                        bssBANK0      00040
-_InitModbusPacket              text40        00D16
-_InitTimeCapture               text5         007D2
-_ModbusAddress                 bssBANK0      00026
-_ModbusBuffer                  bssBANK1      000E1
-_ModbusCRC                     bssBANK0      00022
-_ModbusData                    bssBANK0      00024
-_ModbusFramePointer            bssBANK0      00039
-_ModbusFunction                bssBANK0      0003B
-_ModbusOnTransmit              bitbssBANK0   00352
-_ModbusPacketBuffer            bssBANK1      000B6
-_ModbusSlave                   bssBANK0      0003A
-_MultipleRegister              text20        00D31
-_NOT_IOMASK                    stringtext1   00800
-_OPTION_REG                    (abs)         00095
-_OutFiFo                       bssCOMMONh    00078
-_PEIE                          (abs)         0005E
-_PORTA                         (abs)         0000C
-_PORTB                         (abs)         0000D
-_PR2                           (abs)         0001B
-_PR4                           (abs)         00416
-_PresetSingleRegister          text21        00398
-_PrimaryTimerms                bssBANK0      00028
-_RB0                           (abs)         00068
-_RCIE                          (abs)         0048D
-_RCIF                          (abs)         0008D
-_RCSTA                         (abs)         0019D
-_RD                            (abs)         00CA8
-_RcvClear                      text4         00CF9
-_RcvGetChar                    text2         00E04
-_RcvInFiFo                     bssBANK0      0003F
-_RcvIsDataIn                   text3         00D0D
-_RcvOutFiFo                    bssBANK0      0003E
-_RcvSerialBuffer               bssBANK2      00120
-_ReadA2D                       text17        006BB
-_ReadAllCoils                  text18        00F51
-_ReadCurrentRegister           text10        004AF
-_ReadHoldingRegister           text9         00434
-_ReadIO                        text15        00731
-_ReadIOPin                     text16        00E79
-_ReadInputStatus               text7         00D98
-_ReadTSensor                   text14        00D22
-_ReadVRef                      text13        00D62
-_ResetCounterFlag              bitbssBANK0   00353
-_ResetIOCycle                  text30        00D85
-_Retry                         bssBANK0      00044
-_SCKP                          (abs)         00CFC
-_SPBRGH                        (abs)         0019C
-_SPBRGL                        (abs)         0019B
-_SPEN                          (abs)         00CEF
-_SYNC                          (abs)         00CF4
-_SaveSetting                   text31        00E3B
-_ScanNextIOPin                 text43        00F2A
-_SendBytesFrame                text12        0056A
-_SendFrameError                text37        00DBF
-_SendModbusPacket              text38        00FD0
-_SendPresetFrame               text36        00DD5
-_SendReadByteFrame             text8         00D41
-_SendReadFrame                 text11        00DAB
-_SerialBuffer                  bssBANK2      00140
-_SerialSum                     bssBANK0      0003D
-_SetAnalogConfig               text29        0067D
-_SetIOChange                   text28        00F7A
-_SetIOConfig                   text23        0029E
-_SetInputConfig                text27        007A1
-_SetOutputConfig               text26        00FA4
-_SetPullUp                     text25        00F04
-_SetSingleCoil                 text34        00D73
-_SetTimeCaptureConfig          text24        0051A
-_Setting                       bssBANK1      000D6
-_T1CON                         (abs)         00018
-_T2CON                         (abs)         0001C
-_T4CON                         (abs)         00417
-_TMR0                          (abs)         00015
-_TMR0IE                        (abs)         0005D
-_TMR0IF                        (abs)         0005A
-_TMR1GE                        (abs)         000CF
-_TMR1H                         (abs)         00017
-_TMR1IE                        (abs)         00488
-_TMR1IF                        (abs)         00088
-_TMR1L                         (abs)         00016
-_TMR1ON                        (abs)         000C0
-_TMR2                          (abs)         0001A
-_TMR2IE                        (abs)         00489
-_TMR2IF                        (abs)         00089
-_TMR4                          (abs)         00415
-_TMR4IE                        (abs)         00499
-_TMR4IF                        (abs)         00099
-_TRISA                         (abs)         0008C
-_TRISB                         (abs)         0008D
-_TXEN                          (abs)         00CF5
-_TXIE                          (abs)         0048C
-_TXIF                          (abs)         0008C
-_TXREG                         (abs)         0019A
-_TXSTA                         (abs)         0019E
-_TimeCapture                   bssBANK1      000A0
-_TimeCapture1Count             bssBANK0      00030
-_TimeCapture2Count             bssBANK0      0002E
-_TimeCapture3Count             bssBANK0      0002C
-_TimeCapture4Count             bssBANK0      0002A
-_Timer0Overflow                bitbssBANK0   00355
-_TimerDeciSec                  bssBANK0      00041
-_TimerHiCount                  bssBANK0      00032
-_TimerLoCount                  bssBANK0      00020
-_TimerSecFlag                  bitbssBANK0   00354
-_Timerms                       bssBANK0      00036
-_WDTCON                        (abs)         00097
-_WPUA                          (abs)         0020C
-_WPUB                          (abs)         0020D
-_WR                            (abs)         00CA9
-_WREN                          (abs)         00CAA
-_WaitForEndDeciSecond          bitbssCOMMONh 003BA
-_WaitForStartDeciSecond        bitbssCOMMONh 003B8
-_WorkingByte                   bssBANK0      00047
-_WorkingSensorData             bssBANK1      000B0
-_WriteAllCoils                 text22        00EE0
-_WriteIO                       text35        0063C
-__Babs1                        abs1          1E020
-__Bbank0                       bank0         1E020
-__Bbank1                       bank1         1E020
-__Bbank10                      bank10        1E020
-__Bbank11                      bank11        1E020
-__Bbank12                      bank12        1E020
-__Bbank13                      bank13        1E020
-__Bbank14                      bank14        1E020
-__Bbank15                      bank15        1E020
-__Bbank16                      bank16        1E020
-__Bbank17                      bank17        1E020
-__Bbank18                      bank18        1E020
-__Bbank19                      bank19        1E020
-__Bbank2                       bank2         1E020
-__Bbank20                      bank20        1E020
-__Bbank21                      bank21        1E020
-__Bbank22                      bank22        1E020
-__Bbank23                      bank23        1E020
-__Bbank24                      bank24        1E020
-__Bbank25                      bank25        1E020
-__Bbank26                      bank26        1E020
-__Bbank27                      bank27        1E020
-__Bbank28                      bank28        1E020
-__Bbank29                      bank29        1E020
-__Bbank3                       bank3         1E020
-__Bbank30                      bank30        1E020
-__Bbank31                      bank31        1E020
-__Bbank4                       bank4         1E020
-__Bbank5                       bank5         1E020
-__Bbank6                       bank6         1E020
-__Bbank7                       bank7         1E020
-__Bbank8                       bank8         1E020
-__Bbank9                       bank9         1E020
-__Bbigram                      bigram        1E020
-__BbitbssBANK0                 bitbssBANK0   1E020
-__BbitbssCOMMONh               bitbssCOMMONh 1E020
-__BbssBANK0                    bssBANK0      1E020
-__BbssBANK1                    bssBANK1      1E020
-__BbssBANK2                    bssBANK2      1E020
-__Bclrtext                     clrtext       1E020
-__Bcode                        code          1E020
-__Bcommon                      common        1E020
-__BcstackBANK0                 cstackBANK0   1E020
-__BcstackCOMMONh               cstackCOMMONh 1E020
-__BcstackCOMMONl               cstackCOMMONl 1E020
-__Beeprom_data                 eeprom_data   0F000
-__Bmaintext                    maintext      1E020
-__Bram                         ram           1E020
-__Bsfr0                        sfr0          1E020
-__Bsfr1                        sfr1          1E020
-__Bsfr10                       sfr10         1E020
-__Bsfr11                       sfr11         1E020
-__Bsfr12                       sfr12         1E020
-__Bsfr13                       sfr13         1E020
-__Bsfr14                       sfr14         1E020
-__Bsfr15                       sfr15         1E020
-__Bsfr16                       sfr16         1E020
-__Bsfr17                       sfr17         1E020
-__Bsfr18                       sfr18         1E020
-__Bsfr19                       sfr19         1E020
-__Bsfr2                        sfr2          1E020
-__Bsfr20                       sfr20         1E020
-__Bsfr21                       sfr21         1E020
-__Bsfr22                       sfr22         1E020
-__Bsfr23                       sfr23         1E020
-__Bsfr24                       sfr24         1E020
-__Bsfr25                       sfr25         1E020
-__Bsfr26                       sfr26         1E020
-__Bsfr27                       sfr27         1E020
-__Bsfr28                       sfr28         1E020
-__Bsfr29                       sfr29         1E020
-__Bsfr3                        sfr3          1E020
-__Bsfr30                       sfr30         1E020
-__Bsfr31                       sfr31         1E020
-__Bsfr4                        sfr4          1E020
-__Bsfr5                        sfr5          1E020
-__Bsfr6                        sfr6          1E020
-__Bsfr7                        sfr7          1E020
-__Bsfr8                        sfr8          1E020
-__Bsfr9                        sfr9          1E020
-__Bstrings                     strings       1E020
-__Btext                        text          1E020
-__CFG_BOREN$ON                 (abs)         00000
-__CFG_BORV$LO                  (abs)         00000
-__CFG_CLKOUTEN$OFF             (abs)         00000
-__CFG_CP$OFF                   (abs)         00000
-__CFG_CPD$OFF                  (abs)         00000
-__CFG_FCMEN$ON                 (abs)         00000
-__CFG_FOSC$HS                  (abs)         00000
-__CFG_IESO$OFF                 (abs)         00000
-__CFG_LVP$ON                   (abs)         00000
-__CFG_MCLRE$ON                 (abs)         00000
-__CFG_PLLEN$ON                 (abs)         00000
-__CFG_PWRTE$OFF                (abs)         00000
-__CFG_STVREN$ON                (abs)         00000
-__CFG_WDTE$ON                  (abs)         00000
-__CFG_WRT$OFF                  (abs)         00000
-__Habs1                        abs1          00020
-__Hbank0                       bank0         00020
-__Hbank1                       bank1         00020
-__Hbank10                      bank10        00020
-__Hbank11                      bank11        00020
-__Hbank12                      bank12        00020
-__Hbank13                      bank13        00020
-__Hbank14                      bank14        00020
-__Hbank15                      bank15        00020
-__Hbank16                      bank16        00020
-__Hbank17                      bank17        00020
-__Hbank18                      bank18        00020
-__Hbank19                      bank19        00020
-__Hbank2                       bank2         00020
-__Hbank20                      bank20        00020
-__Hbank21                      bank21        00020
-__Hbank22                      bank22        00020
-__Hbank23                      bank23        00020
-__Hbank24                      bank24        00020
-__Hbank25                      bank25        00020
-__Hbank26                      bank26        00020
-__Hbank27                      bank27        00020
-__Hbank28                      bank28        00020
-__Hbank29                      bank29        00020
-__Hbank3                       bank3         00020
-__Hbank30                      bank30        00020
-__Hbank31                      bank31        00020
-__Hbank4                       bank4         00020
-__Hbank5                       bank5         00020
-__Hbank6                       bank6         00020
-__Hbank7                       bank7         00020
-__Hbank8                       bank8         00020
-__Hbank9                       bank9         00020
-__Hbigram                      bigram        00020
-__HbitbssBANK0                 bitbssBANK0   F0100
-__HbitbssCOMMONh               bitbssCOMMONh F0100
-__HbssBANK0                    bssBANK0      00020
-__HbssBANK1                    bssBANK1      00020
-__HbssBANK2                    bssBANK2      00020
-__HbssCOMMONh                  bssCOMMONh    1E020
-__Hcinit                       cinit         00172
-__Hclrtext                     clrtext       00020
-__Hcode                        code          00020
-__Hcommon                      common        00020
-__Hconfig                      config        08009
-__HcstackBANK0                 cstackBANK0   00020
-__HcstackCOMMONh               cstackCOMMONh 00020
-__HcstackCOMMONl               cstackCOMMONl 00020
-__Heeprom_data                 eeprom_data   00010
-__Hend_init                    end_init      00153
-__Hfunctab                     functab       00000
-__Hidloc                       idloc         00000
-__Hinit                        init          00151
-__Hintentry                    intentry      00151
-__Hmaintext                    maintext      00020
-__Hpowerup                     powerup       00000
-__Hram                         ram           00020
-__Hreset_vec                   reset_vec     00002
-__Hsfr0                        sfr0          00020
-__Hsfr1                        sfr1          00020
-__Hsfr10                       sfr10         00020
-__Hsfr11                       sfr11         00020
-__Hsfr12                       sfr12         00020
-__Hsfr13                       sfr13         00020
-__Hsfr14                       sfr14         00020
-__Hsfr15                       sfr15         00020
-__Hsfr16                       sfr16         00020
-__Hsfr17                       sfr17         00020
-__Hsfr18                       sfr18         00020
-__Hsfr19                       sfr19         00020
-__Hsfr2                        sfr2          00020
-__Hsfr20                       sfr20         00020
-__Hsfr21                       sfr21         00020
-__Hsfr22                       sfr22         00020
-__Hsfr23                       sfr23         00020
-__Hsfr24                       sfr24         00020
-__Hsfr25                       sfr25         00020
-__Hsfr26                       sfr26         00020
-__Hsfr27                       sfr27         00020
-__Hsfr28                       sfr28         00020
-__Hsfr29                       sfr29         00020
-__Hsfr3                        sfr3          00020
-__Hsfr30                       sfr30         00020
-__Hsfr31                       sfr31         00020
-__Hsfr4                        sfr4          00020
-__Hsfr5                        sfr5          00020
-__Hsfr6                        sfr6          00020
-__Hsfr7                        sfr7          00020
-__Hsfr8                        sfr8          00020
-__Hsfr9                        sfr9          00020
-__Hspace_0                     (abs)         F0100
-__Hspace_1                     (abs)         003BB
-__Hspace_2                     (abs)         00000
-__Hspace_3                     (abs)         00010
-__Hstack                       stack         00000
-__Hstrings                     strings       00020
-__Hstringtext1                 stringtext1   1E020
-__Hstringtext2                 stringtext2   1E020
-__Hstringtext3                 stringtext3   1E020
-__Hstringtext4                 stringtext4   1E020
-__Htext                        text          00020
-__Labs1                        abs1          00020
-__Lbank0                       bank0         00020
-__Lbank1                       bank1         00020
-__Lbank10                      bank10        00020
-__Lbank11                      bank11        00020
-__Lbank12                      bank12        00020
-__Lbank13                      bank13        00020
-__Lbank14                      bank14        00020
-__Lbank15                      bank15        00020
-__Lbank16                      bank16        00020
-__Lbank17                      bank17        00020
-__Lbank18                      bank18        00020
-__Lbank19                      bank19        00020
-__Lbank2                       bank2         00020
-__Lbank20                      bank20        00020
-__Lbank21                      bank21        00020
-__Lbank22                      bank22        00020
-__Lbank23                      bank23        00020
-__Lbank24                      bank24        00020
-__Lbank25                      bank25        00020
-__Lbank26                      bank26        00020
-__Lbank27                      bank27        00020
-__Lbank28                      bank28        00020
-__Lbank29                      bank29        00020
-__Lbank3                       bank3         00020
-__Lbank30                      bank30        00020
-__Lbank31                      bank31        00020
-__Lbank4                       bank4         00020
-__Lbank5                       bank5         00020
-__Lbank6                       bank6         00020
-__Lbank7                       bank7         00020
-__Lbank8                       bank8         00020
-__Lbank9                       bank9         00020
-__Lbigram                      bigram        00020
-__LbitbssBANK0                 bitbssBANK0   F0100
-__LbitbssCOMMONh               bitbssCOMMONh F0100
-__LbssBANK0                    bssBANK0      00020
-__LbssBANK1                    bssBANK1      00020
-__LbssBANK2                    bssBANK2      00020
-__LbssCOMMONh                  bssCOMMONh    1E020
-__Lcinit                       cinit         00153
-__Lclrtext                     clrtext       00020
-__Lcode                        code          00020
-__Lcommon                      common        00020
-__Lconfig                      config        08007
-__LcstackBANK0                 cstackBANK0   00020
-__LcstackCOMMONh               cstackCOMMONh 00020
-__LcstackCOMMONl               cstackCOMMONl 00020
-__Leeprom_data                 eeprom_data   00000
-__Lend_init                    end_init      00151
-__Lfunctab                     functab       00000
-__Lidloc                       idloc         00000
-__Linit                        init          00151
-__Lintentry                    intentry      00004
-__Lmaintext                    maintext      00020
-__Lpowerup                     powerup       00000
-__Lram                         ram           00020
-__Lreset_vec                   reset_vec     00000
-__Lsfr0                        sfr0          00020
-__Lsfr1                        sfr1          00020
-__Lsfr10                       sfr10         00020
-__Lsfr11                       sfr11         00020
-__Lsfr12                       sfr12         00020
-__Lsfr13                       sfr13         00020
-__Lsfr14                       sfr14         00020
-__Lsfr15                       sfr15         00020
-__Lsfr16                       sfr16         00020
-__Lsfr17                       sfr17         00020
-__Lsfr18                       sfr18         00020
-__Lsfr19                       sfr19         00020
-__Lsfr2                        sfr2          00020
-__Lsfr20                       sfr20         00020
-__Lsfr21                       sfr21         00020
-__Lsfr22                       sfr22         00020
-__Lsfr23                       sfr23         00020
-__Lsfr24                       sfr24         00020
-__Lsfr25                       sfr25         00020
-__Lsfr26                       sfr26         00020
-__Lsfr27                       sfr27         00020
-__Lsfr28                       sfr28         00020
-__Lsfr29                       sfr29         00020
-__Lsfr3                        sfr3          00020
-__Lsfr30                       sfr30         00020
-__Lsfr31                       sfr31         00020
-__Lsfr4                        sfr4          00020
-__Lsfr5                        sfr5          00020
-__Lsfr6                        sfr6          00020
-__Lsfr7                        sfr7          00020
-__Lsfr8                        sfr8          00020
-__Lsfr9                        sfr9          00020
-__Lspace_0                     (abs)         00000
-__Lspace_1                     (abs)         00000
-__Lspace_2                     (abs)         00000
-__Lspace_3                     (abs)         00000
-__Lstack                       stack         00000
-__Lstrings                     strings       00020
-__Lstringtext1                 stringtext1   1E020
-__Lstringtext2                 stringtext2   1E020
-__Lstringtext3                 stringtext3   1E020
-__Lstringtext4                 stringtext4   1E020
-__Ltext                        text          00020
-__S0                           (abs)         08009
-__S1                           (abs)         00160
-__S2                           (abs)         00000
-__S3                           (abs)         0F010
-__TMR0                         bssBANK0      00049
-__TMR0_MSB                     bssBANK0      00034
-___bmul                        text42        00D51
-___bmul@multiplicand           cstackCOMMONh 00072
-___bmul@multiplier             cstackCOMMONh 00075
-___bmul@product                cstackCOMMONh 00074
-___int_sp                      stack         00000
-___latbits                     (abs)         00001
-___sp                          stack         00000
-__end_ofSetIOConfig@ValidCCP   stringtext3   00820
-__end_of_CRC16                 text46        005FB
-__end_of_CSMASK                stringtext4   0082A
-__end_of_DealWithError         text44        00D0D
-__end_of_DecodeSerial          text45        00731
-__end_of_DoIOCycle             text41        007A1
-__end_of_ExecuteCommand        text6         0063C
-__end_of_ForceSingleCoil       text33        00E3B
-__end_of_GetInputPin           text19        00E79
-__end_of_IOMASK                stringtext2   00816
-__end_of_InitModbusPacket      text40        00D22
-__end_of_InitTimeCapture       text5         00800
-__end_of_MultipleRegister      text20        00D41
-__end_of_NOT_IOMASK            stringtext1   0080B
-__end_of_PresetSingleRegister  text21        00434
-__end_of_RcvClear              text4         00CFF
-__end_of_RcvGetChar            text2         00E1E
-__end_of_RcvIsDataIn           text3         00D16
-__end_of_ReadA2D               text17        006F7
-__end_of_ReadAllCoils          text18        00F7A
-__end_of_ReadCurrentRegister   text10        0051A
-__end_of_ReadHoldingRegister   text9         004AF
-__end_of_ReadIO                text15        00769
-__end_of_ReadIOPin             text16        00E99
-__end_of_ReadInputStatus       text7         00DAB
-__end_of_ReadTSensor           text14        00D31
-__end_of_ReadVRef              text13        00D73
-__end_of_ResetIOCycle          text30        00D98
-__end_of_SaveSetting           text31        00E5A
-__end_of_ScanNextIOPin         text43        00F51
-__end_of_SendBytesFrame        text12        005B8
-__end_of_SendFrameError        text37        00DD5
-__end_of_SendModbusPacket      text38        01000
-__end_of_SendPresetFrame       text36        00DEC
-__end_of_SendReadByteFrame     text8         00D51
-__end_of_SendReadFrame         text11        00DBF
-__end_of_SetAnalogConfig       text29        006BB
-__end_of_SetIOChange           text28        00FA4
-__end_of_SetIOConfig           text23        00398
-__end_of_SetInputConfig        text27        007D2
-__end_of_SetOutputConfig       text26        00FD0
-__end_of_SetPullUp             text25        00F2A
-__end_of_SetSingleCoil         text34        00D85
-__end_of_SetTimeCaptureConfig  text24        0056A
-__end_of_WriteAllCoils         text22        00F04
-__end_of_WriteIO               text35        0067D
-__end_of___bmul                text42        00D62
-__end_of__initialization       cinit         0016E
-__end_of_eeprom_read           text1         00E04
-__end_of_eeprom_write          text32        00EBC
-__end_of_isr                   intentry      00151
-__end_of_main                  maintext      0029E
-__end_of_putch                 text39        00EE0
-__initialization               cinit         00153
-__pbitbssBANK0                 bitbssBANK0   00350
-__pbitbssCOMMONh               bitbssCOMMONh 003B8
-__pbssBANK0                    bssBANK0      00020
-__pbssBANK1                    bssBANK1      000A0
-__pbssBANK2                    bssBANK2      00120
-__pbssCOMMONh                  bssCOMMONh    00078
-__pcstackBANK0                 cstackBANK0   0004E
-__pcstackCOMMONh               cstackCOMMONh 00070
-__pcstackCOMMONl               cstackCOMMONl 00079
-__pintentry                    intentry      00004
-__pmaintext                    maintext      00172
-__pstringtext1                 stringtext1   00800
-__pstringtext2                 stringtext2   0080B
-__pstringtext3                 stringtext3   00816
-__pstringtext4                 stringtext4   00820
-__ptext1                       text1         00DEC
-__ptext10                      text10        004AF
-__ptext11                      text11        00DAB
-__ptext12                      text12        0056A
-__ptext13                      text13        00D62
-__ptext14                      text14        00D22
-__ptext15                      text15        00731
-__ptext16                      text16        00E79
-__ptext17                      text17        006BB
-__ptext18                      text18        00F51
-__ptext19                      text19        00E5A
-__ptext2                       text2         00E04
-__ptext20                      text20        00D31
-__ptext21                      text21        00398
-__ptext22                      text22        00EE0
-__ptext23                      text23        0029E
-__ptext24                      text24        0051A
-__ptext25                      text25        00F04
-__ptext26                      text26        00FA4
-__ptext27                      text27        007A1
-__ptext28                      text28        00F7A
-__ptext29                      text29        0067D
-__ptext3                       text3         00D0D
-__ptext30                      text30        00D85
-__ptext31                      text31        00E3B
-__ptext32                      text32        00E99
-__ptext33                      text33        00E1E
-__ptext34                      text34        00D73
-__ptext35                      text35        0063C
-__ptext36                      text36        00DD5
-__ptext37                      text37        00DBF
-__ptext38                      text38        00FD0
-__ptext39                      text39        00EBC
-__ptext4                       text4         00CF9
-__ptext40                      text40        00D16
-__ptext41                      text41        00769
-__ptext42                      text42        00D51
-__ptext43                      text43        00F2A
-__ptext44                      text44        00D05
-__ptext45                      text45        006F7
-__ptext46                      text46        005B8
-__ptext5                       text5         007D2
-__ptext6                       text6         005FB
-__ptext7                       text7         00D98
-__ptext8                       text8         00D41
-__ptext9                       text9         00434
-__size_of_CRC16                (abs)         00000
-__size_of_DealWithError        (abs)         00000
-__size_of_DecodeSerial         (abs)         00000
-__size_of_DoIOCycle            (abs)         00000
-__size_of_ExecuteCommand       (abs)         00000
-__size_of_ForceSingleCoil      (abs)         00000
-__size_of_GetInputPin          (abs)         00000
-__size_of_InitModbusPacket     (abs)         00000
-__size_of_InitTimeCapture      (abs)         00000
-__size_of_MultipleRegister     (abs)         00000
-__size_of_PresetSingleRegister (abs)         00000
-__size_of_RcvClear             (abs)         00000
-__size_of_RcvGetChar           (abs)         00000
-__size_of_RcvIsDataIn          (abs)         00000
-__size_of_ReadA2D              (abs)         00000
-__size_of_ReadAllCoils         (abs)         00000
-__size_of_ReadCurrentRegister  (abs)         00000
-__size_of_ReadHoldingRegister  (abs)         00000
-__size_of_ReadIO               (abs)         00000
-__size_of_ReadIOPin            (abs)         00000
-__size_of_ReadInputStatus      (abs)         00000
-__size_of_ReadTSensor          (abs)         00000
-__size_of_ReadVRef             (abs)         00000
-__size_of_ResetIOCycle         (abs)         00000
-__size_of_SaveSetting          (abs)         00000
-__size_of_ScanNextIOPin        (abs)         00000
-__size_of_SendBytesFrame       (abs)         00000
-__size_of_SendFrameError       (abs)         00000
-__size_of_SendModbusPacket     (abs)         00000
-__size_of_SendPresetFrame      (abs)         00000
-__size_of_SendReadByteFrame    (abs)         00000
-__size_of_SendReadFrame        (abs)         00000
-__size_of_SetAnalogConfig      (abs)         00000
-__size_of_SetIOChange          (abs)         00000
-__size_of_SetIOConfig          (abs)         00000
-__size_of_SetInputConfig       (abs)         00000
-__size_of_SetOutputConfig      (abs)         00000
-__size_of_SetPullUp            (abs)         00000
-__size_of_SetSingleCoil        (abs)         00000
-__size_of_SetTimeCaptureConfig (abs)         00000
-__size_of_WriteAllCoils        (abs)         00000
-__size_of_WriteIO              (abs)         00000
-__size_of___bmul               (abs)         00000
-__size_of_eeprom_read          (abs)         00000
-__size_of_eeprom_write         (abs)         00000
-__size_of_isr                  (abs)         00000
-__size_of_main                 (abs)         00000
-__size_of_putch                (abs)         00000
-_eeprom_read                   text1         00DEC
-_eeprom_write                  text32        00E99
-_isr                           intentry      00004
-_main                          maintext      00172
-_putch                         text39        00EBC
-btemp                          (abs)         0007E
-clear_ram0                     clrtext       00CFF
-eeprom_read@addr               cstackCOMMONh 00075
-eeprom_write@addr              cstackCOMMONh 00075
-eeprom_write@value             cstackCOMMONh 00072
-end_of_initialization          cinit         0016E
-int$flags                      (abs)         0007E
-intlevel0                      functab       00000
-intlevel1                      functab       00000
-intlevel2                      functab       00000
-intlevel3                      functab       00000
-intlevel4                      functab       00000
-intlevel5                      functab       00000
-isr@_temp                      bssBANK0      00038
-main@idx                       cstackBANK0   00068
-main@loop                      cstackBANK0   00069
-main@pointer                   cstackBANK0   00066
-main@rcode                     cstackBANK0   00067
-putch@char_out                 cstackCOMMONh 00073
-putch@temp                     cstackCOMMONh 00074
-reset_vec                      reset_vec     00000
-stackhi                        (abs)         0216F
-stacklo                        (abs)         02140
-start                          init          00151
-start_initialization           cinit         00153
-wtemp0                         (abs)         0007E
+?_CRC16                          cstackCOMMONh 00072
+?_ReadA2D                        cstackCOMMONh 00072
+?_ReadAllCoils                   cstackCOMMONh 00075
+?_ReadIO                         cstackBANK0   0004D
+?_ReadTSensor                    cstackBANK0   0004D
+?_ReadVRef                       cstackBANK0   0004D
+CRC16@addr                       cstackBANK0   0004A
+CRC16@crc                        cstackBANK0   0004C
+CRC16@i                          cstackBANK0   0004B
+CRC16@num                        cstackCOMMONh 00072
+DecodeSerial@CalcCRC             cstackBANK0   0004F
+DecodeSerial@msg                 cstackBANK0   0004E
+DecodeSerial@rcode               cstackBANK0   00051
+DoIOCycle@SensorPt               cstackCOMMONh 00076
+GetInputPin@_tmp                 cstackCOMMONh 00073
+GetInputPin@thePin               cstackCOMMONh 00074
+MultipleRegister@_Address        cstackCOMMONh 00073
+PresetSingleRegister@oldConfig   cstackBANK0   00057
+PresetSingleRegister@temp        cstackBANK0   00058
+RcvGetChar@temp                  cstackCOMMONh 00073
+ReadA2D@channel                  cstackBANK0   0004A
+ReadA2D@value                    cstackBANK0   0004B
+ReadAllCoils@loop                cstackBANK0   0004E
+ReadAllCoils@stemp               cstackBANK0   0004C
+ReadCurrentRegister@IOn          cstackBANK0   0005F
+ReadCurrentRegister@temp         cstackBANK0   0005D
+ReadHoldingRegister@Flag         cstackBANK0   0005E
+ReadHoldingRegister@ctemp1       cstackBANK0   00065
+ReadHoldingRegister@ctemp2       cstackBANK0   00063
+ReadHoldingRegister@ctemp3       cstackBANK0   00064
+ReadHoldingRegister@temp         cstackBANK0   0005F
+ReadIO@Pin                       cstackBANK0   00052
+ReadIO@ioconfig                  cstackBANK0   00051
+ReadIOPin@Pin                    cstackCOMMONh 00074
+ReadIOPin@_tempb                 cstackCOMMONh 00073
+ReadIOPin@mask                   cstackCOMMONh 00075
+ResetIOCycle@loop                cstackCOMMONh 00073
+SaveSetting@idx                  cstackBANK0   0004B
+SaveSetting@pointer              cstackBANK0   0004A
+ScanNextIOPin@loop               cstackCOMMONh 00073
+SendBytesFrame@NByte             cstackBANK0   00059
+SendBytesFrame@_Address          cstackBANK0   00058
+SendBytesFrame@_temp             cstackBANK0   00057
+SendBytesFrame@loop              cstackBANK0   00056
+SendFrameError@ErrorCode         cstackBANK0   00053
+SendModbusPacket@BufferSize      cstackBANK0   0004E
+SendModbusPacket@CRC             cstackBANK0   0004F
+SendModbusPacket@loop            cstackBANK0   00051
+SendReadFrame@value              cstackBANK0   00052
+SendReadRegistersFrame@temp      cstackBANK0   00054
+SetAnalogConfig@Pin              cstackCOMMONh 00074
+SetAnalogConfig@_tmp             cstackCOMMONh 00075
+SetAnalogConfig@ioconfig         cstackCOMMONh 00073
+SetIOChange@Pin                  cstackCOMMONh 00075
+SetIOChange@_temp                cstackCOMMONh 00074
+SetIOChange@value                cstackCOMMONh 00072
+SetIOConfig@Pin                  cstackBANK0   0004B
+SetIOConfig@ValidCCP             stringtext3   00816
+SetIOConfig@ioconfig             cstackBANK0   0004A
+SetInputConfig@Pin               cstackCOMMONh 00075
+SetInputConfig@_ntmp             cstackCOMMONh 00074
+SetInputConfig@_tmp              cstackCOMMONh 00073
+SetOutputConfig@Pin              cstackCOMMONh 00075
+SetOutputConfig@_tmp             cstackCOMMONh 00074
+SetOutputConfig@ioconfig         cstackCOMMONh 00073
+SetPullUp@Pin                    cstackCOMMONh 00074
+SetPullUp@PullUp                 cstackCOMMONh 00072
+SetSingleCoil@thePin             cstackBANK0   0004C
+SetSingleCoil@value              cstackBANK0   0004A
+SetTimeCaptureConfig@Pin         cstackCOMMONh 00074
+SetTimeCaptureConfig@detection   cstackCOMMONh 00072
+SetTimer1Clock@value             cstackCOMMONh 00073
+WriteAllCoils@loop               cstackBANK0   00055
+WriteAllCoils@stemp              cstackBANK0   00053
+WriteIO@Pin                      cstackCOMMONh 00076
+WriteIO@mask                     cstackCOMMONh 00074
+WriteIO@nmask                    cstackCOMMONh 00075
+WriteIO@value                    cstackCOMMONh 00072
+_ABDEN                           (abs)         00CF8
+_ADCON0                          (abs)         0009D
+_ADCON0bits                      (abs)         0009D
+_ADCON1                          (abs)         0009E
+_ADCON1bits                      (abs)         0009E
+_ADIE                            (abs)         0048E
+_ADIF                            (abs)         0008E
+_ADON                            (abs)         004E8
+_ADRESH                          (abs)         0009C
+_ADRESL                          (abs)         0009B
+_ANSELA                          (abs)         0018C
+_ANSELB                          (abs)         0018D
+_APFCON0                         (abs)         0011D
+_APFCON1                         (abs)         0011E
+_BRG16                           (abs)         00CFB
+_BRGH                            (abs)         00CF2
+_BadIO                           bssBANK0      0003E
+_BitCount                        bssBANK0      00044
+_ByteIndex                       bssBANK0      00041
+_CARRY                           (abs)         00018
+_CCP1CON                         (abs)         00293
+_CCP1IE                          (abs)         0048A
+_CCP1IF                          (abs)         0008A
+_CCP2CON                         (abs)         0029A
+_CCP2IE                          (abs)         00490
+_CCP2IF                          (abs)         00090
+_CCP3CON                         (abs)         00313
+_CCP3IE                          (abs)         0049C
+_CCP3IF                          (abs)         0009C
+_CCP4CON                         (abs)         0031A
+_CCP4IE                          (abs)         0049D
+_CCP4IF                          (abs)         0009D
+_CCPR1H                          (abs)         00292
+_CCPR1L                          (abs)         00291
+_CCPR2H                          (abs)         00299
+_CCPR2L                          (abs)         00298
+_CCPR3H                          (abs)         00312
+_CCPR3L                          (abs)         00311
+_CCPR4H                          (abs)         00319
+_CCPR4L                          (abs)         00318
+_CCPTMRS                         (abs)         0029E
+_COUNTER                         (abs)         001E6
+_CPSON                           (abs)         000F7
+_CRC16                           text48        00675
+_CREN                            (abs)         00CEC
+_CSMASK                          stringtext4   00820
+_CSum                            bssBANK0      00042
+_CurrentIOCycle                  bssBANK0      00046
+_CurrentIOPin                    bssBANK0      00047
+_CurrentIOSensor                 bssBANK0      00048
+_CurrentIOStatus                 bssBANK0      00049
+_DHTFlag                         (abs)         00070
+_DealWithError                   text46        00BE5
+_DecodeSerial                    text47        007B4
+_DoIOCycle                       text43        00F90
+_EEADR                           (abs)         00191
+_EECON1                          (abs)         00195
+_EECON2                          (abs)         00196
+_EEDATA                          (abs)         00193
+_EnableConfigChange              bitbssBANK0   00361
+_ExecuteCommand                  text6         006B8
+_FVRCON                          (abs)         00117
+_FVRCONbits                      (abs)         00117
+_ForceReset                      bitbssBANK0   00360
+_ForceSingleCoil                 text35        00CEC
+_GIE                             (abs)         0005F
+_GetInputPin                     text20        00D28
+_GotCapSenseFlag                 bitbssCOMMONh 003B9
+_ICOUNTER                        (abs)         001E0
+_INTCON                          (abs)         0000B
+_IOCBF                           (abs)         00396
+_IOCBN                           (abs)         00395
+_IOCBP                           (abs)         00394
+_IOCIE                           (abs)         0005B
+_IOCounterFlag                   (abs)         00071
+_IOCounterReset                  (abs)         00072
+_IOMASK                          stringtext2   0080B
+_IOSensorData                    (abs)         001A0
+_InFiFo                          bssBANK0      0003C
+_InitModbusPacket                text42        00BF6
+_InitTimeCapture                 text5         00F27
+_ModbusAddress                   bssBANK0      00024
+_ModbusBuffer                    bssBANK1      000E4
+_ModbusCRC                       bssBANK0      00020
+_ModbusData                      bssBANK0      00022
+_ModbusFramePointer              bssBANK0      00035
+_ModbusFunction                  bssBANK0      00037
+_ModbusOnTransmit                bitbssBANK0   00362
+_ModbusPacketBuffer              bssBANK1      000B8
+_ModbusSlave                     bssBANK0      00036
+_MultipleRegister                text21        00C11
+_NOT_IOMASK                      stringtext1   00800
+_OPTION_REG                      (abs)         00095
+_OutFiFo                         bssCOMMONh    00078
+_PEIE                            (abs)         0005E
+_PORTA                           (abs)         0000C
+_PORTB                           (abs)         0000D
+_PR2                             (abs)         0001B
+_PR4                             (abs)         00416
+_PresetSingleRegister            text22        0017B
+_PrimaryTimerms                  bssBANK0      00026
+_RB0                             (abs)         00068
+_RCIE                            (abs)         0048D
+_RCIF                            (abs)         0008D
+_RCSTA                           (abs)         0019D
+_RD                              (abs)         00CA8
+_RcvClear                        text4         00BD9
+_RcvGetChar                      text2         00CD2
+_RcvInFiFo                       bssBANK0      0003B
+_RcvIsDataIn                     text3         00BED
+_RcvOutFiFo                      bssBANK0      0003A
+_RcvSerialBuffer                 bssBANK2      00120
+_ReadA2D                         text18        00778
+_ReadAllCoils                    text19        00E47
+_ReadCurrentRegister             text11        0056C
+_ReadHoldingRegister             text9         004E7
+_ReadIO                          text16        00FC8
+_ReadIOPin                       text17        00D47
+_ReadInputStatus                 text7         00C66
+_ReadTSensor                     text15        00C02
+_ReadVRef                        text14        00C42
+_ResetCounterFlag                bitbssBANK0   00363
+_ResetIOCycle                    text32        00C53
+_Retry                           bssBANK0      00040
+_SCKP                            (abs)         00CFC
+_SPBRGH                          (abs)         0019C
+_SPBRGL                          (abs)         0019B
+_SPEN                            (abs)         00CEF
+_SYNC                            (abs)         00CF4
+_SaveSetting                     text33        00D09
+_ScanNextIOPin                   text45        00DF8
+_SendBytesFrame                  text13        00627
+_SendFrameError                  text39        00C8D
+_SendModbusPacket                text40        00EC6
+_SendPresetFrame                 text38        00CA3
+_SendReadByteFrame               text8         00C21
+_SendReadFrame                   text12        00C79
+_SendReadRegistersFrame          text10        00F59
+_SerialBuffer                    bssBANK2      00140
+_SerialSum                       bssBANK0      00039
+_SetAnalogConfig                 text31        0073A
+_SetIOChange                     text30        00E70
+_SetIOConfig                     text25        003EE
+_SetInputConfig                  text29        00EF6
+_SetOutputConfig                 text28        00E9A
+_SetPullUp                       text27        00DD2
+_SetSingleCoil                   text36        007EE
+_SetTimeCaptureConfig            text26        005D7
+_SetTimer1Clock                  text24        00E1F
+_Setting                         bssBANK1      000D8
+_T1CON                           (abs)         00018
+_T1CONbits                       (abs)         00018
+_T2CON                           (abs)         0001C
+_T4CON                           (abs)         00417
+_TMR0                            (abs)         00015
+_TMR0IE                          (abs)         0005D
+_TMR0IF                          (abs)         0005A
+_TMR1GE                          (abs)         000CF
+_TMR1H                           (abs)         00017
+_TMR1IE                          (abs)         00488
+_TMR1IF                          (abs)         00088
+_TMR1L                           (abs)         00016
+_TMR1ON                          (abs)         000C0
+_TMR2                            (abs)         0001A
+_TMR2IE                          (abs)         00489
+_TMR2IF                          (abs)         00089
+_TMR4                            (abs)         00415
+_TMR4IE                          (abs)         00499
+_TMR4IF                          (abs)         00099
+_TRISA                           (abs)         0008C
+_TRISB                           (abs)         0008D
+_TXEN                            (abs)         00CF5
+_TXIE                            (abs)         0048C
+_TXIF                            (abs)         0008C
+_TXREG                           (abs)         0019A
+_TXSTA                           (abs)         0019E
+_TimeCapture                     bssBANK1      000A0
+_TimeCapture1Count               bssBANK0      0002E
+_TimeCapture2Count               bssBANK0      0002C
+_TimeCapture3Count               bssBANK0      0002A
+_TimeCapture4Count               bssBANK0      00028
+_Timer0Overflow                  bitbssBANK0   00365
+_Timer1Clock                     dataBANK0     0006D
+_TimerDeciSec                    bssBANK0      0003D
+_TimerHiCount                    bssBANK0      00030
+_TimerSecFlag                    bitbssBANK0   00364
+_Timerms                         bssBANK0      00032
+_WDTCON                          (abs)         00097
+_WPUA                            (abs)         0020C
+_WPUB                            (abs)         0020D
+_WR                              (abs)         00CA9
+_WREN                            (abs)         00CAA
+_WaitForEndDeciSecond            bitbssCOMMONh 003BA
+_WaitForStartDeciSecond          bitbssCOMMONh 003B8
+_WorkingByte                     bssBANK0      00043
+_WorkingSensorData               bssBANK1      000B0
+_WriteAllCoils                   text23        00DAE
+_WriteIO                         text37        006F9
+__Babs1                          abs1          1E020
+__Bbank0                         bank0         1E020
+__Bbank1                         bank1         1E020
+__Bbank10                        bank10        1E020
+__Bbank11                        bank11        1E020
+__Bbank12                        bank12        1E020
+__Bbank13                        bank13        1E020
+__Bbank14                        bank14        1E020
+__Bbank15                        bank15        1E020
+__Bbank16                        bank16        1E020
+__Bbank17                        bank17        1E020
+__Bbank18                        bank18        1E020
+__Bbank19                        bank19        1E020
+__Bbank2                         bank2         1E020
+__Bbank20                        bank20        1E020
+__Bbank21                        bank21        1E020
+__Bbank22                        bank22        1E020
+__Bbank23                        bank23        1E020
+__Bbank24                        bank24        1E020
+__Bbank25                        bank25        1E020
+__Bbank26                        bank26        1E020
+__Bbank27                        bank27        1E020
+__Bbank28                        bank28        1E020
+__Bbank29                        bank29        1E020
+__Bbank3                         bank3         1E020
+__Bbank30                        bank30        1E020
+__Bbank31                        bank31        1E020
+__Bbank4                         bank4         1E020
+__Bbank5                         bank5         1E020
+__Bbank6                         bank6         1E020
+__Bbank7                         bank7         1E020
+__Bbank8                         bank8         1E020
+__Bbank9                         bank9         1E020
+__Bbigram                        bigram        1E020
+__BbitbssBANK0                   bitbssBANK0   1E020
+__BbitbssCOMMONh                 bitbssCOMMONh 1E020
+__BbssBANK0                      bssBANK0      1E020
+__BbssBANK1                      bssBANK1      1E020
+__BbssBANK2                      bssBANK2      1E020
+__Bclrtext                       clrtext       1E020
+__Bcode                          code          1E020
+__Bcommon                        common        1E020
+__BcstackBANK0                   cstackBANK0   1E020
+__BcstackCOMMONh                 cstackCOMMONh 1E020
+__BcstackCOMMONl                 cstackCOMMONl 1E020
+__BdataBANK0                     dataBANK0     1E020
+__Beeprom_data                   eeprom_data   0F000
+__Bmaintext                      maintext      1E020
+__Bram                           ram           1E020
+__Bsfr0                          sfr0          1E020
+__Bsfr1                          sfr1          1E020
+__Bsfr10                         sfr10         1E020
+__Bsfr11                         sfr11         1E020
+__Bsfr12                         sfr12         1E020
+__Bsfr13                         sfr13         1E020
+__Bsfr14                         sfr14         1E020
+__Bsfr15                         sfr15         1E020
+__Bsfr16                         sfr16         1E020
+__Bsfr17                         sfr17         1E020
+__Bsfr18                         sfr18         1E020
+__Bsfr19                         sfr19         1E020
+__Bsfr2                          sfr2          1E020
+__Bsfr20                         sfr20         1E020
+__Bsfr21                         sfr21         1E020
+__Bsfr22                         sfr22         1E020
+__Bsfr23                         sfr23         1E020
+__Bsfr24                         sfr24         1E020
+__Bsfr25                         sfr25         1E020
+__Bsfr26                         sfr26         1E020
+__Bsfr27                         sfr27         1E020
+__Bsfr28                         sfr28         1E020
+__Bsfr29                         sfr29         1E020
+__Bsfr3                          sfr3          1E020
+__Bsfr30                         sfr30         1E020
+__Bsfr31                         sfr31         1E020
+__Bsfr4                          sfr4          1E020
+__Bsfr5                          sfr5          1E020
+__Bsfr6                          sfr6          1E020
+__Bsfr7                          sfr7          1E020
+__Bsfr8                          sfr8          1E020
+__Bsfr9                          sfr9          1E020
+__Bstrings                       strings       1E020
+__Btext                          text          1E020
+__CFG_BOREN$ON                   (abs)         00000
+__CFG_BORV$LO                    (abs)         00000
+__CFG_CLKOUTEN$OFF               (abs)         00000
+__CFG_CP$OFF                     (abs)         00000
+__CFG_CPD$OFF                    (abs)         00000
+__CFG_FCMEN$ON                   (abs)         00000
+__CFG_FOSC$HS                    (abs)         00000
+__CFG_IESO$OFF                   (abs)         00000
+__CFG_LVP$ON                     (abs)         00000
+__CFG_MCLRE$ON                   (abs)         00000
+__CFG_PLLEN$ON                   (abs)         00000
+__CFG_PWRTE$OFF                  (abs)         00000
+__CFG_STVREN$ON                  (abs)         00000
+__CFG_WDTE$ON                    (abs)         00000
+__CFG_WRT$OFF                    (abs)         00000
+__Habs1                          abs1          00020
+__Hbank0                         bank0         00020
+__Hbank1                         bank1         00020
+__Hbank10                        bank10        00020
+__Hbank11                        bank11        00020
+__Hbank12                        bank12        00020
+__Hbank13                        bank13        00020
+__Hbank14                        bank14        00020
+__Hbank15                        bank15        00020
+__Hbank16                        bank16        00020
+__Hbank17                        bank17        00020
+__Hbank18                        bank18        00020
+__Hbank19                        bank19        00020
+__Hbank2                         bank2         00020
+__Hbank20                        bank20        00020
+__Hbank21                        bank21        00020
+__Hbank22                        bank22        00020
+__Hbank23                        bank23        00020
+__Hbank24                        bank24        00020
+__Hbank25                        bank25        00020
+__Hbank26                        bank26        00020
+__Hbank27                        bank27        00020
+__Hbank28                        bank28        00020
+__Hbank29                        bank29        00020
+__Hbank3                         bank3         00020
+__Hbank30                        bank30        00020
+__Hbank31                        bank31        00020
+__Hbank4                         bank4         00020
+__Hbank5                         bank5         00020
+__Hbank6                         bank6         00020
+__Hbank7                         bank7         00020
+__Hbank8                         bank8         00020
+__Hbank9                         bank9         00020
+__Hbigram                        bigram        00020
+__HbitbssBANK0                   bitbssBANK0   F0100
+__HbitbssCOMMONh                 bitbssCOMMONh F0100
+__HbssBANK0                      bssBANK0      00020
+__HbssBANK1                      bssBANK1      00020
+__HbssBANK2                      bssBANK2      00020
+__HbssCOMMONh                    bssCOMMONh    1E020
+__Hcinit                         cinit         0017B
+__Hclrtext                       clrtext       00020
+__Hcode                          code          00020
+__Hcommon                        common        00020
+__Hconfig                        config        08009
+__HcstackBANK0                   cstackBANK0   00020
+__HcstackCOMMONh                 cstackCOMMONh 00020
+__HcstackCOMMONl                 cstackCOMMONl 00020
+__HdataBANK0                     dataBANK0     00020
+__Heeprom_data                   eeprom_data   00010
+__Hend_init                      end_init      00159
+__Hfunctab                       functab       00000
+__HidataBANK0                    idataBANK0    1E020
+__Hidloc                         idloc         00000
+__Hinit                          init          00157
+__Hintentry                      intentry      00157
+__Hmaintext                      maintext      00020
+__Hpowerup                       powerup       00000
+__Hram                           ram           00020
+__Hreset_vec                     reset_vec     00002
+__Hsfr0                          sfr0          00020
+__Hsfr1                          sfr1          00020
+__Hsfr10                         sfr10         00020
+__Hsfr11                         sfr11         00020
+__Hsfr12                         sfr12         00020
+__Hsfr13                         sfr13         00020
+__Hsfr14                         sfr14         00020
+__Hsfr15                         sfr15         00020
+__Hsfr16                         sfr16         00020
+__Hsfr17                         sfr17         00020
+__Hsfr18                         sfr18         00020
+__Hsfr19                         sfr19         00020
+__Hsfr2                          sfr2          00020
+__Hsfr20                         sfr20         00020
+__Hsfr21                         sfr21         00020
+__Hsfr22                         sfr22         00020
+__Hsfr23                         sfr23         00020
+__Hsfr24                         sfr24         00020
+__Hsfr25                         sfr25         00020
+__Hsfr26                         sfr26         00020
+__Hsfr27                         sfr27         00020
+__Hsfr28                         sfr28         00020
+__Hsfr29                         sfr29         00020
+__Hsfr3                          sfr3          00020
+__Hsfr30                         sfr30         00020
+__Hsfr31                         sfr31         00020
+__Hsfr4                          sfr4          00020
+__Hsfr5                          sfr5          00020
+__Hsfr6                          sfr6          00020
+__Hsfr7                          sfr7          00020
+__Hsfr8                          sfr8          00020
+__Hsfr9                          sfr9          00020
+__Hspace_0                       (abs)         F0100
+__Hspace_1                       (abs)         003BB
+__Hspace_2                       (abs)         00000
+__Hspace_3                       (abs)         00010
+__Hstack                         stack         00000
+__Hstrings                       strings       00020
+__Hstringtext1                   stringtext1   1E020
+__Hstringtext2                   stringtext2   1E020
+__Hstringtext3                   stringtext3   1E020
+__Hstringtext4                   stringtext4   1E020
+__Htext                          text          00020
+__Labs1                          abs1          00020
+__Lbank0                         bank0         00020
+__Lbank1                         bank1         00020
+__Lbank10                        bank10        00020
+__Lbank11                        bank11        00020
+__Lbank12                        bank12        00020
+__Lbank13                        bank13        00020
+__Lbank14                        bank14        00020
+__Lbank15                        bank15        00020
+__Lbank16                        bank16        00020
+__Lbank17                        bank17        00020
+__Lbank18                        bank18        00020
+__Lbank19                        bank19        00020
+__Lbank2                         bank2         00020
+__Lbank20                        bank20        00020
+__Lbank21                        bank21        00020
+__Lbank22                        bank22        00020
+__Lbank23                        bank23        00020
+__Lbank24                        bank24        00020
+__Lbank25                        bank25        00020
+__Lbank26                        bank26        00020
+__Lbank27                        bank27        00020
+__Lbank28                        bank28        00020
+__Lbank29                        bank29        00020
+__Lbank3                         bank3         00020
+__Lbank30                        bank30        00020
+__Lbank31                        bank31        00020
+__Lbank4                         bank4         00020
+__Lbank5                         bank5         00020
+__Lbank6                         bank6         00020
+__Lbank7                         bank7         00020
+__Lbank8                         bank8         00020
+__Lbank9                         bank9         00020
+__Lbigram                        bigram        00020
+__LbitbssBANK0                   bitbssBANK0   F0100
+__LbitbssCOMMONh                 bitbssCOMMONh F0100
+__LbssBANK0                      bssBANK0      00020
+__LbssBANK1                      bssBANK1      00020
+__LbssBANK2                      bssBANK2      00020
+__LbssCOMMONh                    bssCOMMONh    1E020
+__Lcinit                         cinit         00159
+__Lclrtext                       clrtext       00020
+__Lcode                          code          00020
+__Lcommon                        common        00020
+__Lconfig                        config        08007
+__LcstackBANK0                   cstackBANK0   00020
+__LcstackCOMMONh                 cstackCOMMONh 00020
+__LcstackCOMMONl                 cstackCOMMONl 00020
+__LdataBANK0                     dataBANK0     00020
+__Leeprom_data                   eeprom_data   00000
+__Lend_init                      end_init      00157
+__Lfunctab                       functab       00000
+__LidataBANK0                    idataBANK0    1E020
+__Lidloc                         idloc         00000
+__Linit                          init          00157
+__Lintentry                      intentry      00004
+__Lmaintext                      maintext      00020
+__Lpowerup                       powerup       00000
+__Lram                           ram           00020
+__Lreset_vec                     reset_vec     00000
+__Lsfr0                          sfr0          00020
+__Lsfr1                          sfr1          00020
+__Lsfr10                         sfr10         00020
+__Lsfr11                         sfr11         00020
+__Lsfr12                         sfr12         00020
+__Lsfr13                         sfr13         00020
+__Lsfr14                         sfr14         00020
+__Lsfr15                         sfr15         00020
+__Lsfr16                         sfr16         00020
+__Lsfr17                         sfr17         00020
+__Lsfr18                         sfr18         00020
+__Lsfr19                         sfr19         00020
+__Lsfr2                          sfr2          00020
+__Lsfr20                         sfr20         00020
+__Lsfr21                         sfr21         00020
+__Lsfr22                         sfr22         00020
+__Lsfr23                         sfr23         00020
+__Lsfr24                         sfr24         00020
+__Lsfr25                         sfr25         00020
+__Lsfr26                         sfr26         00020
+__Lsfr27                         sfr27         00020
+__Lsfr28                         sfr28         00020
+__Lsfr29                         sfr29         00020
+__Lsfr3                          sfr3          00020
+__Lsfr30                         sfr30         00020
+__Lsfr31                         sfr31         00020
+__Lsfr4                          sfr4          00020
+__Lsfr5                          sfr5          00020
+__Lsfr6                          sfr6          00020
+__Lsfr7                          sfr7          00020
+__Lsfr8                          sfr8          00020
+__Lsfr9                          sfr9          00020
+__Lspace_0                       (abs)         00000
+__Lspace_1                       (abs)         00000
+__Lspace_2                       (abs)         00000
+__Lspace_3                       (abs)         00000
+__Lstack                         stack         00000
+__Lstrings                       strings       00020
+__Lstringtext1                   stringtext1   1E020
+__Lstringtext2                   stringtext2   1E020
+__Lstringtext3                   stringtext3   1E020
+__Lstringtext4                   stringtext4   1E020
+__Ltext                          text          00020
+__S0                             (abs)         08009
+__S1                             (abs)         00160
+__S2                             (abs)         00000
+__S3                             (abs)         0F010
+__TMR0                           bssBANK0      00045
+__TMR0_MSB                       bssBANK1      000B6
+___bmul                          text44        00C31
+___bmul@multiplicand             cstackCOMMONh 00072
+___bmul@multiplier               cstackCOMMONh 00075
+___bmul@product                  cstackCOMMONh 00074
+___int_sp                        stack         00000
+___latbits                       (abs)         00001
+___sp                            stack         00000
+__end_ofSetIOConfig@ValidCCP     stringtext3   00820
+__end_of_CRC16                   text48        006B8
+__end_of_CSMASK                  stringtext4   0082A
+__end_of_DealWithError           text46        00BED
+__end_of_DecodeSerial            text47        007EE
+__end_of_DoIOCycle               text43        00FC8
+__end_of_ExecuteCommand          text6         006F9
+__end_of_ForceSingleCoil         text35        00D09
+__end_of_GetInputPin             text20        00D47
+__end_of_IOMASK                  stringtext2   00816
+__end_of_InitModbusPacket        text42        00C02
+__end_of_InitTimeCapture         text5         00F59
+__end_of_MultipleRegister        text21        00C21
+__end_of_NOT_IOMASK              stringtext1   0080B
+__end_of_PresetSingleRegister    text22        002BC
+__end_of_RcvClear                text4         00BDF
+__end_of_RcvGetChar              text2         00CEC
+__end_of_RcvIsDataIn             text3         00BF6
+__end_of_ReadA2D                 text18        007B4
+__end_of_ReadAllCoils            text19        00E70
+__end_of_ReadCurrentRegister     text11        005D7
+__end_of_ReadHoldingRegister     text9         0056C
+__end_of_ReadIO                  text16        01000
+__end_of_ReadIOPin               text17        00D67
+__end_of_ReadInputStatus         text7         00C79
+__end_of_ReadTSensor             text15        00C11
+__end_of_ReadVRef                text14        00C53
+__end_of_ResetIOCycle            text32        00C66
+__end_of_SaveSetting             text33        00D28
+__end_of_ScanNextIOPin           text45        00E1F
+__end_of_SendBytesFrame          text13        00675
+__end_of_SendFrameError          text39        00CA3
+__end_of_SendModbusPacket        text40        00EF6
+__end_of_SendPresetFrame         text38        00CBA
+__end_of_SendReadByteFrame       text8         00C31
+__end_of_SendReadFrame           text12        00C8D
+__end_of_SendReadRegistersFrame  text10        00F90
+__end_of_SetAnalogConfig         text31        00778
+__end_of_SetIOChange             text30        00E9A
+__end_of_SetIOConfig             text25        004E7
+__end_of_SetInputConfig          text29        00F27
+__end_of_SetOutputConfig         text28        00EC6
+__end_of_SetPullUp               text27        00DF8
+__end_of_SetSingleCoil           text36        00800
+__end_of_SetTimeCaptureConfig    text26        00627
+__end_of_SetTimer1Clock          text24        00E47
+__end_of_WriteAllCoils           text23        00DD2
+__end_of_WriteIO                 text37        0073A
+__end_of___bmul                  text44        00C42
+__end_of__initialization         cinit         00177
+__end_of_eeprom_read             text1         00CD2
+__end_of_eeprom_write            text34        00D8A
+__end_of_isr                     intentry      00157
+__end_of_main                    maintext      003EE
+__end_of_putch                   text41        00DAE
+__initialization                 cinit         00159
+__pbitbssBANK0                   bitbssBANK0   00360
+__pbitbssCOMMONh                 bitbssCOMMONh 003B8
+__pbssBANK0                      bssBANK0      00020
+__pbssBANK1                      bssBANK1      000A0
+__pbssBANK2                      bssBANK2      00120
+__pbssCOMMONh                    bssCOMMONh    00078
+__pcstackBANK0                   cstackBANK0   0004A
+__pcstackCOMMONh                 cstackCOMMONh 00070
+__pcstackCOMMONl                 cstackCOMMONl 00079
+__pdataBANK0                     dataBANK0     0006D
+__pidataBANK0                    idataBANK0    00003
+__pintentry                      intentry      00004
+__pmaintext                      maintext      002BC
+__pstringtext1                   stringtext1   00800
+__pstringtext2                   stringtext2   0080B
+__pstringtext3                   stringtext3   00816
+__pstringtext4                   stringtext4   00820
+__ptext1                         text1         00CBA
+__ptext10                        text10        00F59
+__ptext11                        text11        0056C
+__ptext12                        text12        00C79
+__ptext13                        text13        00627
+__ptext14                        text14        00C42
+__ptext15                        text15        00C02
+__ptext16                        text16        00FC8
+__ptext17                        text17        00D47
+__ptext18                        text18        00778
+__ptext19                        text19        00E47
+__ptext2                         text2         00CD2
+__ptext20                        text20        00D28
+__ptext21                        text21        00C11
+__ptext22                        text22        0017B
+__ptext23                        text23        00DAE
+__ptext24                        text24        00E1F
+__ptext25                        text25        003EE
+__ptext26                        text26        005D7
+__ptext27                        text27        00DD2
+__ptext28                        text28        00E9A
+__ptext29                        text29        00EF6
+__ptext3                         text3         00BED
+__ptext30                        text30        00E70
+__ptext31                        text31        0073A
+__ptext32                        text32        00C53
+__ptext33                        text33        00D09
+__ptext34                        text34        00D67
+__ptext35                        text35        00CEC
+__ptext36                        text36        007EE
+__ptext37                        text37        006F9
+__ptext38                        text38        00CA3
+__ptext39                        text39        00C8D
+__ptext4                         text4         00BD9
+__ptext40                        text40        00EC6
+__ptext41                        text41        00D8A
+__ptext42                        text42        00BF6
+__ptext43                        text43        00F90
+__ptext44                        text44        00C31
+__ptext45                        text45        00DF8
+__ptext46                        text46        00BE5
+__ptext47                        text47        007B4
+__ptext48                        text48        00675
+__ptext5                         text5         00F27
+__ptext6                         text6         006B8
+__ptext7                         text7         00C66
+__ptext8                         text8         00C21
+__ptext9                         text9         004E7
+__size_of_CRC16                  (abs)         00000
+__size_of_DealWithError          (abs)         00000
+__size_of_DecodeSerial           (abs)         00000
+__size_of_DoIOCycle              (abs)         00000
+__size_of_ExecuteCommand         (abs)         00000
+__size_of_ForceSingleCoil        (abs)         00000
+__size_of_GetInputPin            (abs)         00000
+__size_of_InitModbusPacket       (abs)         00000
+__size_of_InitTimeCapture        (abs)         00000
+__size_of_MultipleRegister       (abs)         00000
+__size_of_PresetSingleRegister   (abs)         00000
+__size_of_RcvClear               (abs)         00000
+__size_of_RcvGetChar             (abs)         00000
+__size_of_RcvIsDataIn            (abs)         00000
+__size_of_ReadA2D                (abs)         00000
+__size_of_ReadAllCoils           (abs)         00000
+__size_of_ReadCurrentRegister    (abs)         00000
+__size_of_ReadHoldingRegister    (abs)         00000
+__size_of_ReadIO                 (abs)         00000
+__size_of_ReadIOPin              (abs)         00000
+__size_of_ReadInputStatus        (abs)         00000
+__size_of_ReadTSensor            (abs)         00000
+__size_of_ReadVRef               (abs)         00000
+__size_of_ResetIOCycle           (abs)         00000
+__size_of_SaveSetting            (abs)         00000
+__size_of_ScanNextIOPin          (abs)         00000
+__size_of_SendBytesFrame         (abs)         00000
+__size_of_SendFrameError         (abs)         00000
+__size_of_SendModbusPacket       (abs)         00000
+__size_of_SendPresetFrame        (abs)         00000
+__size_of_SendReadByteFrame      (abs)         00000
+__size_of_SendReadFrame          (abs)         00000
+__size_of_SendReadRegistersFrame (abs)         00000
+__size_of_SetAnalogConfig        (abs)         00000
+__size_of_SetIOChange            (abs)         00000
+__size_of_SetIOConfig            (abs)         00000
+__size_of_SetInputConfig         (abs)         00000
+__size_of_SetOutputConfig        (abs)         00000
+__size_of_SetPullUp              (abs)         00000
+__size_of_SetSingleCoil          (abs)         00000
+__size_of_SetTimeCaptureConfig   (abs)         00000
+__size_of_SetTimer1Clock         (abs)         00000
+__size_of_WriteAllCoils          (abs)         00000
+__size_of_WriteIO                (abs)         00000
+__size_of___bmul                 (abs)         00000
+__size_of_eeprom_read            (abs)         00000
+__size_of_eeprom_write           (abs)         00000
+__size_of_isr                    (abs)         00000
+__size_of_main                   (abs)         00000
+__size_of_putch                  (abs)         00000
+_eeprom_read                     text1         00CBA
+_eeprom_write                    text34        00D67
+_isr                             intentry      00004
+_main                            maintext      002BC
+_putch                           text41        00D8A
+btemp                            (abs)         0007E
+clear_ram0                       clrtext       00BDF
+eeprom_read@addr                 cstackCOMMONh 00075
+eeprom_write@addr                cstackCOMMONh 00075
+eeprom_write@value               cstackCOMMONh 00072
+end_of_initialization            cinit         00177
+int$flags                        (abs)         0007E
+intlevel0                        functab       00000
+intlevel1                        functab       00000
+intlevel2                        functab       00000
+intlevel3                        functab       00000
+intlevel4                        functab       00000
+intlevel5                        functab       00000
+isr@_temp                        bssBANK0      00034
+main@idx                         cstackBANK0   0006A
+main@loop                        cstackBANK0   0006B
+main@pointer                     cstackBANK0   00068
+main@rcode                       cstackBANK0   00069
+putch@char_out                   cstackCOMMONh 00073
+putch@temp                       cstackCOMMONh 00074
+reset_vec                        reset_vec     00000
+stackhi                          (abs)         0216F
+stacklo                          (abs)         02140
+start                            init          00157
+start_initialization             cinit         00159
+wtemp0                           (abs)         0007E
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 1629 in file "main.c"
+		line 1680 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  loop            1   27[BANK0 ] unsigned char 
-  idx             1   26[BANK0 ] unsigned char 
-  rcode           1   25[BANK0 ] unsigned char 
-  pointer         1   24[BANK0 ] PTR unsigned char 
-		 -> Setting(11), 
+  loop            1   33[BANK0 ] unsigned char 
+  idx             1   32[BANK0 ] unsigned char 
+  rcode           1   31[BANK0 ] unsigned char 
+  pointer         1   30[BANK0 ] PTR unsigned char 
+		 -> Setting(12), 
  Return value:  Size  Location     Type
-                  2  680[None  ] int 
+                  2  691[None  ] int 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
  Tracked objects:
@@ -1301,7 +1333,7 @@ Total ram usage:        4 bytes
 
  *************** function _RcvGetChar *****************
  Defined at:
-		line 869 in file "main.c"
+		line 877 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1331,7 +1363,7 @@ Total ram usage:        2 bytes
 
  *************** function _RcvIsDataIn *****************
  Defined at:
-		line 864 in file "main.c"
+		line 872 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1362,7 +1394,7 @@ Total ram usage:        0 bytes
 
  *************** function _RcvClear *****************
  Defined at:
-		line 857 in file "main.c"
+		line 865 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1392,7 +1424,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitTimeCapture *****************
  Defined at:
-		line 27 in file "TimeCapture.c"
+		line 53 in file "TimeCapture.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1400,7 +1432,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1412,9 +1444,9 @@ Total ram usage:        0 bytes
       Totals:         0       0       0       0       0       0       0
 Total ram usage:        0 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    1
+ Hardware stack levels required when called:    2
  This function calls:
-		Nothing
+		_SetTimer1Clock
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -1422,7 +1454,7 @@ Total ram usage:        0 bytes
 
  *************** function _ExecuteCommand *****************
  Defined at:
-		line 1597 in file "main.c"
+		line 1648 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1457,7 +1489,7 @@ Total ram usage:        0 bytes
 
  *************** function _ReadInputStatus *****************
  Defined at:
-		line 1417 in file "main.c"
+		line 1446 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1489,7 +1521,7 @@ Total ram usage:        0 bytes
 
  *************** function _SendReadByteFrame *****************
  Defined at:
-		line 935 in file "main.c"
+		line 943 in file "main.c"
  Parameters:    Size  Location     Type
   value           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1520,15 +1552,15 @@ Total ram usage:        0 bytes
 
  *************** function _ReadHoldingRegister *****************
  Defined at:
-		line 1236 in file "main.c"
+		line 1263 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  temp            2   13[BANK0 ] unsigned short 
-  ctemp1          1   17[BANK0 ] volatile unsigned char 
-  Flag            1   12[BANK0 ] unsigned char 
-  ctemp3          1   16[BANK0 ] volatile unsigned char 
-  ctemp2          1   15[BANK0 ] volatile unsigned char 
+  temp            4   21[BANK0 ] struct .
+  ctemp1          1   27[BANK0 ] volatile unsigned char 
+  Flag            1   20[BANK0 ] unsigned char 
+  ctemp3          1   26[BANK0 ] volatile unsigned char 
+  ctemp2          1   25[BANK0 ] volatile unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1539,23 +1571,55 @@ Total ram usage:        0 bytes
 		Unchanged: 
  Data sizes:    COMMONh   BANK0   BANK1   BANK2  BANK3h  BANK3l   BANK4
       Params:         0       0       0       0       0       0       0
-      Locals:         0       6       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0
-      Totals:         0       8       0       0       0       0       0
-Total ram usage:        8 bytes
+      Locals:         0       8       0       0       0       0       0
+      Temps:          0       5       0       0       0       0       0
+      Totals:         0      13       0       0       0       0       0
+Total ram usage:       13 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    4
+ Hardware stack levels required when called:    5
  This function calls:
 		_SendFrameError
-		_SendReadFrame
+		_SendReadRegistersFrame
  This function is called by:
 		_ExecuteCommand
  This function uses a non-reentrant model
 
 
+ *************** function _SendReadRegistersFrame *****************
+ Defined at:
+		line 1010 in file "main.c"
+ Parameters:    Size  Location     Type
+  temp            4   10[BANK0 ] struct .
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:    COMMONh   BANK0   BANK1   BANK2  BANK3h  BANK3l   BANK4
+      Params:         0       4       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0
+      Totals:         0       5       0       0       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_InitModbusPacket
+		_SendModbusPacket
+		_SendReadFrame
+ This function is called by:
+		_ReadHoldingRegister
+ This function uses a non-reentrant model
+
+
  *************** function _ReadCurrentRegister *****************
  Defined at:
-		line 1358 in file "main.c"
+		line 1387 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1593,7 +1657,7 @@ Total ram usage:        6 bytes
 
  *************** function _SendReadFrame *****************
  Defined at:
-		line 971 in file "main.c"
+		line 981 in file "main.c"
  Parameters:    Size  Location     Type
   value           2    8[BANK0 ] unsigned short 
  Auto vars:     Size  Location     Type
@@ -1618,14 +1682,14 @@ Total ram usage:        2 bytes
 		_InitModbusPacket
 		_SendModbusPacket
  This function is called by:
-		_ReadHoldingRegister
+		_SendReadRegistersFrame
 		_ReadCurrentRegister
  This function uses a non-reentrant model
 
 
  *************** function _SendBytesFrame *****************
  Defined at:
-		line 1003 in file "main.c"
+		line 1030 in file "main.c"
  Parameters:    Size  Location     Type
   _Address        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1661,7 +1725,7 @@ Total ram usage:        6 bytes
 
  *************** function _ReadVRef *****************
  Defined at:
-		line 1300 in file "main.c"
+		line 1329 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1691,7 +1755,7 @@ Total ram usage:        2 bytes
 
  *************** function _ReadTSensor *****************
  Defined at:
-		line 1309 in file "main.c"
+		line 1338 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1721,7 +1785,7 @@ Total ram usage:        2 bytes
 
  *************** function _ReadIO *****************
  Defined at:
-		line 1275 in file "main.c"
+		line 1304 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1757,7 +1821,7 @@ Total ram usage:        6 bytes
 
  *************** function _ReadIOPin *****************
  Defined at:
-		line 159 in file "IOCycle.c"
+		line 137 in file "IOCycle.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1789,7 +1853,7 @@ Total ram usage:        4 bytes
 
  *************** function _ReadA2D *****************
  Defined at:
-		line 616 in file "main.c"
+		line 619 in file "main.c"
  Parameters:    Size  Location     Type
   channel         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1822,7 +1886,7 @@ Total ram usage:        6 bytes
 
  *************** function _ReadAllCoils *****************
  Defined at:
-		line 1339 in file "main.c"
+		line 1368 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1853,7 +1917,7 @@ Total ram usage:        7 bytes
 
  *************** function _GetInputPin *****************
  Defined at:
-		line 1327 in file "main.c"
+		line 1356 in file "main.c"
  Parameters:    Size  Location     Type
   thePin          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1885,7 +1949,7 @@ Total ram usage:        3 bytes
 
  *************** function _MultipleRegister *****************
  Defined at:
-		line 1319 in file "main.c"
+		line 1348 in file "main.c"
  Parameters:    Size  Location     Type
   _Address        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1915,7 +1979,7 @@ Total ram usage:        2 bytes
 
  *************** function _PresetSingleRegister *****************
  Defined at:
-		line 1509 in file "main.c"
+		line 1538 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1942,7 +2006,9 @@ Total ram usage:        3 bytes
 		_SendFrameError
 		_SendPresetFrame
 		_SetIOConfig
+		_SetTimer1Clock
 		_WriteAllCoils
+		___bmul
  This function is called by:
 		_ExecuteCommand
  This function uses a non-reentrant model
@@ -1950,7 +2016,7 @@ Total ram usage:        3 bytes
 
  *************** function _WriteAllCoils *****************
  Defined at:
-		line 1472 in file "main.c"
+		line 1501 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1980,9 +2046,40 @@ Total ram usage:        4 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _SetTimer1Clock *****************
+ Defined at:
+		line 31 in file "TimeCapture.c"
+ Parameters:    Size  Location     Type
+  value           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  value           1    3[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:    COMMONh   BANK0   BANK1   BANK2  BANK3h  BANK3l   BANK4
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_PresetSingleRegister
+		_InitTimeCapture
+ This function uses a non-reentrant model
+
+
  *************** function _SetIOConfig *****************
  Defined at:
-		line 494 in file "main.c"
+		line 497 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2022,7 +2119,7 @@ Total ram usage:        3 bytes
 
  *************** function _SetTimeCaptureConfig *****************
  Defined at:
-		line 52 in file "TimeCapture.c"
+		line 79 in file "TimeCapture.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
   detection       2    2[COMMON] unsigned int 
@@ -2053,7 +2150,7 @@ Total ram usage:        3 bytes
 
  *************** function _SetPullUp *****************
  Defined at:
-		line 463 in file "main.c"
+		line 466 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
   PullUp          1    2[COMMON] unsigned char 
@@ -2084,7 +2181,7 @@ Total ram usage:        3 bytes
 
  *************** function _SetOutputConfig *****************
  Defined at:
-		line 393 in file "main.c"
+		line 396 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2116,7 +2213,7 @@ Total ram usage:        4 bytes
 
  *************** function _SetInputConfig *****************
  Defined at:
-		line 476 in file "main.c"
+		line 479 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2148,7 +2245,7 @@ Total ram usage:        4 bytes
 
  *************** function _SetIOChange *****************
  Defined at:
-		line 215 in file "IOCycle.c"
+		line 193 in file "IOCycle.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
   value           1    2[COMMON] unsigned char 
@@ -2180,7 +2277,7 @@ Total ram usage:        4 bytes
 
  *************** function _SetAnalogConfig *****************
  Defined at:
-		line 361 in file "main.c"
+		line 364 in file "main.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2244,13 +2341,13 @@ Total ram usage:        2 bytes
 
  *************** function _SaveSetting *****************
  Defined at:
-		line 345 in file "main.c"
+		line 348 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
   idx             1    1[BANK0 ] unsigned char 
   pointer         1    0[BANK0 ] PTR unsigned char 
-		 -> Setting(11), 
+		 -> Setting(12), 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -2307,7 +2404,7 @@ Total ram usage:        4 bytes
 
  *************** function _ForceSingleCoil *****************
  Defined at:
-		line 1486 in file "main.c"
+		line 1515 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2339,7 +2436,7 @@ Total ram usage:        1 bytes
 
  *************** function _SetSingleCoil *****************
  Defined at:
-		line 1464 in file "main.c"
+		line 1493 in file "main.c"
  Parameters:    Size  Location     Type
   thePin          1    wreg     unsigned char 
   value           1    0[BANK0 ] unsigned char 
@@ -2371,7 +2468,7 @@ Total ram usage:        3 bytes
 
  *************** function _WriteIO *****************
  Defined at:
-		line 172 in file "IOCycle.c"
+		line 150 in file "IOCycle.c"
  Parameters:    Size  Location     Type
   Pin             1    wreg     unsigned char 
   value           1    2[COMMON] unsigned char 
@@ -2404,7 +2501,7 @@ Total ram usage:        5 bytes
 
  *************** function _SendPresetFrame *****************
  Defined at:
-		line 1093 in file "main.c"
+		line 1120 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2437,7 +2534,7 @@ Total ram usage:        0 bytes
 
  *************** function _SendFrameError *****************
  Defined at:
-		line 914 in file "main.c"
+		line 922 in file "main.c"
  Parameters:    Size  Location     Type
   ErrorCode       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2474,7 +2571,7 @@ Total ram usage:        2 bytes
 
  *************** function _SendModbusPacket *****************
  Defined at:
-		line 886 in file "main.c"
+		line 894 in file "main.c"
  Parameters:    Size  Location     Type
   BufferSize      1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2504,6 +2601,7 @@ Total ram usage:        5 bytes
 		_SendFrameError
 		_SendReadByteFrame
 		_SendReadFrame
+		_SendReadRegistersFrame
 		_SendBytesFrame
 		_SendPresetFrame
  This function uses a non-reentrant model
@@ -2511,7 +2609,7 @@ Total ram usage:        5 bytes
 
  *************** function _putch *****************
  Defined at:
-		line 835 in file "main.c"
+		line 843 in file "main.c"
  Parameters:    Size  Location     Type
   char_out        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2542,7 +2640,7 @@ Total ram usage:        3 bytes
 
  *************** function _InitModbusPacket *****************
  Defined at:
-		line 907 in file "main.c"
+		line 915 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2569,6 +2667,7 @@ Total ram usage:        1 bytes
 		_SendFrameError
 		_SendReadByteFrame
 		_SendReadFrame
+		_SendReadRegistersFrame
 		_SendBytesFrame
 		_SendPresetFrame
  This function uses a non-reentrant model
@@ -2639,6 +2738,7 @@ Total ram usage:        4 bytes
 		_DoIOCycle
 		_SetIOConfig
 		_SendBytesFrame
+		_PresetSingleRegister
  This function uses a non-reentrant model
 
 
@@ -2704,7 +2804,7 @@ Total ram usage:        0 bytes
 
  *************** function _DecodeSerial *****************
  Defined at:
-		line 1133 in file "main.c"
+		line 1160 in file "main.c"
  Parameters:    Size  Location     Type
   msg             1    wreg     PTR unsigned char 
 		 -> ModbusBuffer(10), 
@@ -2775,7 +2875,7 @@ Total ram usage:        8 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 638 in file "main.c"
+		line 641 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2807,87 +2907,89 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 CRC16.c
-		_CRC16         		CODE           	05B8	0000	68
+		_CRC16         		CODE           	0675	0000	68
 
 CRC16.c estimated size: 68
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul8.c
-		___bmul        		CODE           	0D51	0000	18
+		___bmul        		CODE           	0C31	0000	18
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul8.c estimated size: 18
 
 shared
 		_NOT_IOMASK    		STRCODE        	0800	0000	12
-		__initialization		CODE           	0153	0000	28
+		__initialization		CODE           	0159	0000	31
 		_IOMASK        		STRCODE        	080B	0000	12
 		_CSMASK        		STRCODE        	0820	0000	11
 		SetIOConfig@ValidCCP		STRCODE        	0816	0000	11
 
-shared estimated size: 74
+shared estimated size: 77
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eeread.c
-		_eeprom_read   		CODE           	0DEC	0000	25
+		_eeprom_read   		CODE           	0CBA	0000	25
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eeread.c estimated size: 25
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eewrite.c
-		_eeprom_write  		CODE           	0E99	0000	36
+		_eeprom_write  		CODE           	0D67	0000	36
 
 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eewrite.c estimated size: 36
 
 TimeCapture.c
-		_SetTimeCaptureConfig		CODE           	051A	0000	81
-		_InitTimeCapture		CODE           	07D2	0000	47
+		_SetTimeCaptureConfig		CODE           	05D7	0000	81
+		_SetTimer1Clock		CODE           	0E1F	0000	41
+		_InitTimeCapture		CODE           	0F27	0000	51
 
-TimeCapture.c estimated size: 128
+TimeCapture.c estimated size: 173
 
 main.c
-		_ExecuteCommand		CODE           	05FB	0000	66
-		_ReadA2D       		CODE           	06BB	0000	61
-		_InitModbusPacket		CODE           	0D16	0000	13
-		_MultipleRegister		CODE           	0D31	0000	17
-		_WriteAllCoils 		CODE           	0EE0	0000	37
-		_SetSingleCoil 		CODE           	0D73	0000	19
-		_putch         		CODE           	0EBC	0000	37
-		_SendReadFrame 		CODE           	0DAB	0000	21
-		_GetInputPin   		CODE           	0E5A	0000	32
-		_SendReadByteFrame		CODE           	0D41	0000	17
-		_ReadHoldingRegister		CODE           	0434	0000	124
-		_main          		CODE           	0172	0000	301
-		_ForceSingleCoil		CODE           	0E1E	0000	30
-		_RcvIsDataIn   		CODE           	0D0D	0000	10
-		_ReadVRef      		CODE           	0D62	0000	18
-		_ReadTSensor   		CODE           	0D22	0000	16
-		_SetIOConfig   		CODE           	029E	0000	251
-		_SendPresetFrame		CODE           	0DD5	0000	24
-		_SendBytesFrame		CODE           	056A	0000	79
-		_SetOutputConfig		CODE           	0FA4	0000	45
-		_isr           		CODE           	0004	0000	334
-		_ReadCurrentRegister		CODE           	04AF	0000	108
-		_SetPullUp     		CODE           	0F04	0000	39
-		_ReadAllCoils  		CODE           	0F51	0000	42
-		_SetInputConfig		CODE           	07A1	0000	50
-		_ReadIO        		CODE           	0731	0000	57
-		_RcvGetChar    		CODE           	0E04	0000	27
-		_SaveSetting   		CODE           	0E3B	0000	32
-		_SendFrameError		CODE           	0DBF	0000	23
-		_SetAnalogConfig		CODE           	067D	0000	63
-		_SendModbusPacket		CODE           	0FD0	0000	49
-		_DecodeSerial  		CODE           	06F7	0000	59
-		_ReadInputStatus		CODE           	0D98	0000	20
-		_PresetSingleRegister		CODE           	0398	0000	157
-		_RcvClear      		CODE           	0CF9	0000	7
+		_ExecuteCommand		CODE           	06B8	0000	66
+		_ReadA2D       		CODE           	0778	0000	61
+		_InitModbusPacket		CODE           	0BF6	0000	13
+		_MultipleRegister		CODE           	0C11	0000	17
+		_WriteAllCoils 		CODE           	0DAE	0000	37
+		_SetSingleCoil 		CODE           	07EE	0000	19
+		_putch         		CODE           	0D8A	0000	37
+		_SendReadFrame 		CODE           	0C79	0000	21
+		_GetInputPin   		CODE           	0D28	0000	32
+		_SendReadByteFrame		CODE           	0C21	0000	17
+		_ReadHoldingRegister		CODE           	04E7	0000	134
+		_main          		CODE           	02BC	0000	307
+		_ForceSingleCoil		CODE           	0CEC	0000	30
+		_RcvIsDataIn   		CODE           	0BED	0000	10
+		_ReadVRef      		CODE           	0C42	0000	18
+		_ReadTSensor   		CODE           	0C02	0000	16
+		_SetIOConfig   		CODE           	03EE	0000	250
+		_SendPresetFrame		CODE           	0CA3	0000	24
+		_SendBytesFrame		CODE           	0627	0000	79
+		_SetOutputConfig		CODE           	0E9A	0000	45
+		_isr           		CODE           	0004	0000	340
+		_ReadCurrentRegister		CODE           	056C	0000	108
+		_SetPullUp     		CODE           	0DD2	0000	39
+		_ReadAllCoils  		CODE           	0E47	0000	42
+		_SetInputConfig		CODE           	0EF6	0000	50
+		_ReadIO        		CODE           	0FC8	0000	57
+		_RcvGetChar    		CODE           	0CD2	0000	27
+		_SaveSetting   		CODE           	0D09	0000	32
+		_SendReadRegistersFrame		CODE           	0F59	0000	56
+		_SendFrameError		CODE           	0C8D	0000	23
+		_SetAnalogConfig		CODE           	073A	0000	63
+		_SendModbusPacket		CODE           	0EC6	0000	49
+		_DecodeSerial  		CODE           	07B4	0000	59
+		_ReadInputStatus		CODE           	0C66	0000	20
+		_PresetSingleRegister		CODE           	017B	0000	322
+		_RcvClear      		CODE           	0BD9	0000	7
 
-main.c estimated size: 2285
+main.c estimated size: 2527
 
 IOCycle.c
-		_ResetIOCycle  		CODE           	0D85	0000	20
-		_DoIOCycle     		CODE           	0769	0000	57
-		_DealWithError 		CODE           	0D05	0000	9
-		_ScanNextIOPin 		CODE           	0F2A	0000	40
-		_SetIOChange   		CODE           	0F7A	0000	43
-		_ReadIOPin     		CODE           	0E79	0000	33
-		_WriteIO       		CODE           	063C	0000	66
+		_ResetIOCycle  		CODE           	0C53	0000	20
+		_DoIOCycle     		CODE           	0F90	0000	57
+		_DealWithError 		CODE           	0BE5	0000	9
+		_ScanNextIOPin 		CODE           	0DF8	0000	40
+		_SetIOChange   		CODE           	0E70	0000	43
+		_ReadIOPin     		CODE           	0D47	0000	33
+		_WriteIO       		CODE           	06F9	0000	66
 
 IOCycle.c estimated size: 268
 

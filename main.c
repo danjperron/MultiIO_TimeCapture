@@ -9,7 +9,8 @@
  *  Version 1.01 Novembre 2017
  *  - Version simplifé qui utilise seulement
  *  - I/O en entrée ou sortie
- *  - Detection de capture de temps.
+ *  - Detection de capture de tempsavec l'utilisation du compteur1 (TIMER1)
+ *    et de CCPx 
  */ 
 
 #ifdef __XC__
@@ -63,7 +64,7 @@
 //  A   - 0=IO0 1=IO1 ... 9=IO9
 //  CRC - Cyclical redundancy check.
 //
-//  Ex:   Python Read IO0 Bit on slaveAddress module 1 (using PicModule.py)
+//  Ex:   Lire IO0 Bit sur le module 1  avec PicModule.py
 //
 //    import PicModule
 //    m1 = PicModule.PicMbus(1)
@@ -76,19 +77,20 @@
 //  Modbus [SLA][3][0][A][0][1][CRC]
 //
 //  A =
-//    0..9 :  Read  R/C servo or PWM value of IO
-//     160 :  Read slave modbus address
-//     250 :  Read Software version
-//     251 :  Read Software Id number
-// (0x100 .. 0x109):   Read IO configuration Mode
+//    0,3,8 ou 9:  Lire Les timer de capture sur les IO 0,3,8 ou 9
+//     160 :  Adresse modbus du module
+//     240 :  Lire Horloge1  (32bits, 4 octets) (240= Hi word 241=LowWord)
+//     250 :  Software version
+//     251 :  Software Id number
+// (0x100 .. 0x109):   Lire la cpnfiguration de chaque IO
 // 
 //
 //
 // Ex:  Python
-//   Lire numÃ©ro d'identification du logiciel
+//   Lire numéro d'identification du logiciel
 //   m1.readId():
 //
-//   or  the long way
+//   ou passer par modbus directement
 //
 //   m1.module.read_register(251,0,3);
 //
@@ -98,21 +100,15 @@
 //  Modbus [SLA][4][0][A][0][Number of register][crc]
 //
 
-  // Function 4  Read Current Register
+  // Function 4  Lire Register current
   //
-  // Address 0x1000:  Current VRef 2.048V A/D value
-  // Address 0x1001:  Current Build-in Temperature Sensor
-  // Address 0xn0:  Read current IOn
-//  A =  0x00N0:  Read IO Sensor data where N is the IO id number.
-//       0x1000:  Read the 2.048V ref with the VDD has reference.
-//       0x1001:  Read build-in temperature diode. (VDD=Vref).
+  // Address 0x1000:  Valeur A/D de la reference VRef 2.048V versus VCC
+  // Address 0x1001:  Valeur de la diode pour lire latemperature
+  // Address 0x00n0:  Valeur du IOn ou n est le IO(0..9) spécifique.
 //
+//  Ex: Lire compteur de capture su IO0
 //
-//  Ex: Read DS18B20 Sensor At IO2
-//
-//     m1.readDS18B20(2)
-//
-//
+//     m1.readTimer(0)
 //
 ///// Modbus Fonction 5
 //
@@ -125,15 +121,15 @@
 //
 //  Modbus [SLA][6][0][A][16 bits DATA][CRC]
 //
-//  A = 0..9:  Set R/C Servo or PWM digital output
-//             Also clear COUNTER (In counter Mode)
-//       160:  Set new modbus slave address
+//  A = 0..9:  Reset compteur de temps
+//       160:  change la valeur de la nouvelle adresse modbus
+//       240:  Reset horloge1 (Timer1)
 // 0x100..0x10a:  Set new IO configuration  (IOCONFIG.H)
 
 //
-//  ex:    Change IO0 configuration to read DHT22 SENSOR
+//  ex:    Configurer IO3 pour capture de temps
 //  
-//   m1.config(0,m1.IOCONFIG_DHT22)
+//   m1.config(3,m1.IOCONFIG_TIME_CAPTURE_LOW)
 // 
 //
 
@@ -265,11 +261,18 @@ near volatile unsigned short Timerms;       //  Interrupt Timer counter in 1 ms
 near volatile unsigned short PrimaryTimerms;
 near volatile unsigned char TimerDeciSec;    // modbus timer out in 1/10 of sec  in 0.5 ms count
 #pragma pack 1
+
+
 typedef union {
   unsigned short USHORT;
   unsigned char BYTE[2];
 }ByteShortUnion;
 
+typedef union {
+    unsigned long ULONG;
+    unsigned short USHORT[2];
+    unsigned  char BYTE[4];
+}ByteLongUnion;
 
 //near unsigned char CurrentTimer1H;
 //near unsigned char CurrentTimer1L;
@@ -558,7 +561,7 @@ void SetIOConfig(unsigned char Pin)
       }
       SetInputConfig(Pin);
       if(Pin<5)
-         SetPullUp(Pin,1);
+         SetPullUp(Pin,0);
       SetTimeCaptureConfig(Pin,0);
           
    }  
@@ -645,6 +648,7 @@ static void interrupt isr(void){
 {
      TimerHiCount++;
      TMR1IF=0;
+     return;  
 }
 
 if(CCP1IE)
@@ -658,6 +662,7 @@ if(CCP1IE)
       IOSensorData[0].BYTE[4]=TimeCapture1Count >> 8;
       IOSensorData[0].BYTE[5]=TimeCapture1Count &0xff;
       CCP1IF=0;
+      return;
   }
     
 if(CCP2IE)
@@ -671,6 +676,7 @@ if(CCP2IE)
       IOSensorData[3].BYTE[4]=TimeCapture2Count >> 8;
       IOSensorData[3].BYTE[5]=TimeCapture2Count &0xff;
       CCP2IF=0;
+      return;
    }    
    
 if(CCP3IE)
@@ -684,6 +690,7 @@ if(CCP3IE)
       IOSensorData[8].BYTE[4]=TimeCapture3Count >> 8;
       IOSensorData[8].BYTE[5]=TimeCapture3Count &0xff;
       CCP3IF=0;
+      return;
   }
 if(CCP4IE)
   if(CCP4IF)        
@@ -695,8 +702,8 @@ if(CCP4IE)
       IOSensorData[9].BYTE[3]=CCPR4L;              
       IOSensorData[9].BYTE[4]=TimeCapture4Count >> 8;
       IOSensorData[9].BYTE[5]=TimeCapture4Count & 0xff;              
-
       CCP4IF=0;
+      return;
 }    
     
 // Timer 2 clock system
@@ -788,13 +795,14 @@ if(TXIE)
       TMR0IF=0;
       if(Timer0Overflow)
       {
-//          _TMR0_MSB++;
-#asm
+          _TMR0_MSB++;
+/*#asm
           banksel(__TMR0_MSB)
           incf __TMR0_MSB,f
           skipz
           incf __TMR0_MSB+1,f
 #endasm
+*/
       }
       else
       {
@@ -968,6 +976,8 @@ void SendReadFrame(unsigned  short value)
    SendModbusPacket(5);
 }
 */
+
+
 void SendReadFrame(unsigned  short value)
 {
 
@@ -997,7 +1007,24 @@ void SendReadFrame(unsigned  short value)
    SendModbusPacket(5);
 }
 
-
+void SendReadRegistersFrame(ByteLongUnion temp)
+{
+  if(ModbusData==1)
+      SendReadFrame(temp.USHORT[0]);
+  else if(ModbusData==2)
+  {
+      InitModbusPacket();
+      ModbusPacketBuffer[2]=4;
+      ModbusPacketBuffer[3]=temp.BYTE[3];
+      ModbusPacketBuffer[4]=temp.BYTE[2];
+      ModbusPacketBuffer[5]=temp.BYTE[1];
+      ModbusPacketBuffer[6]=temp.BYTE[0];
+      SendModbusPacket(7);
+  }
+    
+    
+    
+}
 
 
 void SendBytesFrame(unsigned char _Address)
@@ -1230,45 +1257,47 @@ unsigned char DecodeSerial(char * msg)
   // Address 0x10n: Read IOn Config
   // Address 250: Version Number
   // Address 251: Software ID NUMBER
-  // Address 240: Timer1 CounterLo
-  // Address 241: Timer1 CounterHi
+  // Address 240: Timer1 CounterHI
+  // Address 241: Timer1 CounterLo
 
 void   ReadHoldingRegister()
 {
     volatile unsigned char ctemp1,ctemp2,ctemp3;
-    unsigned short temp;
+    ByteLongUnion temp;
     char Flag= 0;
     if((ModbusAddress >= 0x100) && (ModbusAddress <= 0x10a))
-      temp = Setting.IOConfig[ModbusAddress - 0x100];
+      temp.USHORT[0] = Setting.IOConfig[ModbusAddress - 0x100];
    else if(ModbusAddress == 160)
-      temp = Setting.SlaveAddress;
+      temp.USHORT[0] = Setting.SlaveAddress;
    else if(ModbusAddress == 250)
-      temp = RELEASE_VERSION;
+      temp.USHORT[0] = RELEASE_VERSION;
    else if(ModbusAddress == 251)
-      temp = SOFTWARE_ID;
+      temp.USHORT[0] = SOFTWARE_ID;
    else if(ModbusAddress == 240)
-   {
+   {       
        do{
        ctemp1 = TMR1H;
+       temp.USHORT[1]=TimerHiCount;
        ctemp2 = TMR1L;
        ctemp3 = TMR1H;
        }while(ctemp1 != ctemp3);
-       temp = ctemp1;
-       temp <<=8;
-       temp |= ctemp2;
+       temp.USHORT[0]= ((unsigned short) ctemp1 << 8) | (unsigned short)ctemp2;
    }
-       else if(ModbusAddress == 241)
+   else if(ModbusAddress == 241)
        {
-           temp = TimerHiCount;
+           temp.USHORT[0] = TimerHiCount;
        }
-       
+   else if(ModbusAddress == 242)
+   {
+       temp.USHORT[0] = Timer1Clock;
+   }
    else
       Flag= 1;
 
     if(Flag)
      SendFrameError( ILLEGAL_DATA_ADDRESS);
     else
-     SendReadFrame(temp);
+     SendReadRegistersFrame(temp);
 }
 
 
@@ -1559,27 +1588,28 @@ void PresetSingleRegister()
       else
           SendPresetFrame();
     }
-/*    else if(ModbusAddress <10)
+    else if(ModbusAddress <10)
     {
         oldConfig= Setting.IOConfig[ModbusAddress];
-        if(!SetPWMConfig(ModbusAddress,ModbusData)) // This only works if available
+        if((oldConfig&IOCONFIG_TIME_CAPTURE_LO)==IOCONFIG_TIME_CAPTURE_LO)
         {
-           if(oldConfig==IOCONFIG_COUNTER)
-        {
-            if(ModbusData==0)
-                IOSensorData[ModbusAddress].DWORD=0;
+            // reset Time Capture LATCH
+            IOSensorData[ModbusAddress].BYTE[0]=0;
+            IOSensorData[ModbusAddress].BYTE[1]=0;
+            IOSensorData[ModbusAddress].BYTE[2]=0;              
+            IOSensorData[ModbusAddress].BYTE[3]=0;     
+            IOSensorData[ModbusAddress].BYTE[4]=0;
+            IOSensorData[ModbusAddress].BYTE[5]=0;
+            TimeCapture1Count=0;
+            TimeCapture2Count=0;
+            TimeCapture3Count=0;
+            TimeCapture4Count=0;
+            
+            SendPresetFrame();
         }
-           else if(oldConfig == IOCONFIG_SERVO)
-              ServoTimer[ModbusAddress]=ModbusData;
-           else 
-           {
-               ForceSingleCoil();
-               return;
-           }
-        }
-
-        SendPresetFrame();
-    } */
+        else
+            SendFrameError(ILLEGAL_FUNCTION);
+    } 
    else if(ModbusAddress == 160)
     {
        if(EnableConfigChange)
@@ -1589,6 +1619,27 @@ void PresetSingleRegister()
        }
       SendPresetFrame();
     }
+   else if(ModbusAddress == 240)
+   {
+       di();
+       TMR1ON=0;
+       TMR1H=0;
+       TMR1L=0;
+       TimerHiCount=0;
+       TMR1ON=1;
+       ei();
+       SendPresetFrame();          
+   }
+   else if(ModbusAddress == 242)
+   {
+       SetTimer1Clock(ModbusData);
+       if(EnableConfigChange)
+       {
+           Setting.Timer1Clock = ModbusData;
+           SaveSetting;
+       }
+       SendPresetFrame();
+   }
     else
        SendFrameError( ILLEGAL_DATA_ADDRESS);
 }
@@ -1671,6 +1722,10 @@ void ExecuteCommand(void)
   for(idx=0; idx < sizeof(Setting);idx++)
      *(pointer++) = eeprom_read(idx);
 
+// ok set Timer1Clock from eeprom value
+  
+  Timer1Clock = Setting.Timer1Clock;
+  
 
  TRISA		= 0b00111111;	// RA0,RA1,RA3,RA5 INPUT , RA2,RA4 OUTPUT
  TRISB          = 0b11011110;

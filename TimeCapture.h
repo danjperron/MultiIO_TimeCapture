@@ -17,6 +17,7 @@ extern "C" {
 
 void SetTimeCaptureConfig( unsigned char Pin, unsigned detection);
 void InitTimeCapture(void);
+void SetTimer1Clock(unsigned char value);
 
 extern bit  WaitForStartDeciSecond;
 extern bit  WaitForEndDeciSecond;
@@ -30,7 +31,8 @@ extern volatile unsigned short TimeCapture4Count;
 extern volatile unsigned long TimeCapture[4];
 
 extern volatile unsigned short TimerHiCount;
-extern volatile unsigned short TimerLoCount;
+extern unsigned char Timer1Clock;
+
 
 
 #endif

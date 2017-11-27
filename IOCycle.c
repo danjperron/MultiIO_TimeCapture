@@ -133,28 +133,6 @@ void ResetIOCycle(void)
  }
 }
 
-void SetInputMode(unsigned char Pin)
-{
- unsigned char _tmp= IOMASK[Pin];
- if(Pin<5)
-     TRISB |= _tmp;
- else
-     TRISA |= _tmp;
-}
-
-void SetOutputMode(unsigned char Pin)
-{
-
- unsigned char _tmp= NOT_IOMASK[Pin];
- if(Pin<5)
-     TRISB &= _tmp;
- else
-     TRISA &= _tmp;
-
-
-}
-
-
 
 char  ReadIOPin(unsigned char Pin)
 {

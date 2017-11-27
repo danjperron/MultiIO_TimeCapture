@@ -16,13 +16,39 @@ bit  GotCapSenseFlag;
 
 volatile unsigned long TimeCapture[4];
 
+
+
 volatile unsigned short TimerHiCount;
-volatile unsigned short TimerLoCount;
+
 
 volatile unsigned short TimeCapture1Count;
 volatile unsigned short TimeCapture2Count;
 volatile unsigned short TimeCapture3Count;
 volatile unsigned short TimeCapture4Count;
+
+unsigned char Timer1Clock = 8;
+
+void SetTimer1Clock(unsigned char value)
+{
+    switch(value)
+    {
+        case 8: 
+            T1CONbits.T1CKPS = 0;
+            break;
+        case 4:
+            T1CONbits.T1CKPS = 1;
+            break;
+        case 2:
+            T1CONbits.T1CKPS = 2;
+            break;
+        default:
+            T1CONbits.T1CKPS = 3;
+            value=1;
+    }
+    Timer1Clock = value;    
+}
+
+
 
 void InitTimeCapture(void)
 {
@@ -39,6 +65,7 @@ void InitTimeCapture(void)
    TMR1L = 0;
    T1CON = 0b00000000;  // fsoc/4  (8Mhz timer clock
  //  T1CON = 0b00110000;  // fsoc/4/8  (1Mhz timer clock
+   SetTimer1Clock(Timer1Clock); // ajuste vitesse du clock soit 1,2,4 ou 8Mhz
    TMR1GE=0;   // no gate
    TMR1IF=0;
    TMR1IE=1;  // enable interrupt

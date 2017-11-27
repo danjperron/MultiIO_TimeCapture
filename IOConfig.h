@@ -113,6 +113,7 @@ extern const unsigned char CSMASK[10];
 typedef struct{
 unsigned char IOConfig[INPUT_COUNT];
 unsigned char SlaveAddress;
+unsigned char Timer1Clock;
 }SettingStruct;
 
 
